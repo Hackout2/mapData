@@ -30,8 +30,10 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
             if (is.null(lat) && is.null(long)) {
                 expected <- c("latitude" %in% names(df) && "longitude" %in% names(df), 
                   "lat" %in% names(df) && "long" %in% names(df))  # end of lat/long else 
-                if (all(expected)) {
-                  stop("Could not detect columns containing lat/long. Please specify in function call")
+                
+                if (any(expected) == FALSE) {
+                  message("Could not detect columns containing lat/long. Please specify in function call")
+                  return(FALSE)
                 }
                 if (expected[1]) {
                   # If they are named latitude and longitude
@@ -44,13 +46,20 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
                   long_check <- test_long(df$long)
                 }
             } else {
+              # If the user specifies a non-standard name for lat and long
+              lat <- df[, which(names(df) %in% lat)]
+              long <- df[, which(names(df) %in% long)]
+              lat_check <- test_lat(lat)
+              long_check <- test_long(long)
                 # if they specify column names
             }
             if (!lat_check) {
                 message("Errors detected in latitude data")
+                return(FALSE)
             }
             if (!long_check) {
                 message("Errors detected in longitude data")
+                return(FALSE)
             }
         }  # not_empty
 }  # full function 
