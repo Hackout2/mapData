@@ -34,16 +34,15 @@ aggregate(!is.na(by.var),by=list(dept=dep.df$CODE_DEPT),sum) ## this won't conta
 
 ## documentation.
 fun.mean.by.var = function(x,by,FUN=mean,...) {
+    ## to do: make the names(tt.full) pretty or informative.
+    ## to do: optimize this using the pipe operator %>%
     if(class(x) != "numeric") stop("error: numeric class required for aggregating the mean.\n")
     
-    tt.full = rep(NA,length(levels(by)))
-    names(tt.full) = levels(by)
     x.agg = aggregate(x,by=list(by),FUN=FUN,...) ## this won't contain the empty depts.
-    tt.full[match(x.agg$Group.1,names(tt.full))] = x.agg$x
+    x.agg = data.frame(Group.1=x.agg$Group.1,x.agg$x) ## flatten out in case the FUN returns a matrix rather than a vector.
+    tt.full = merge(data.frame(by=levels(by)),x.agg,by.x="by",by.y="Group.1",all=TRUE)
     return(tt.full)
 }
-
-%>% # pipe operator. for optimization
 
 
 fun.mean.by.var(quant.var,by.var,mean)
