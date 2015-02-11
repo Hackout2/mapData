@@ -2,9 +2,9 @@
 
 export(fix_dates)
 export(md_geocoder)
+export(sanitize_text)
 export(test_lat)
 export(test_long)
-import(dplyr)
 import(lubridate)
 importFrom(assertthat,assert_that)
 importFrom(assertthat,not_empty)

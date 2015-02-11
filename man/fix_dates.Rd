@@ -14,7 +14,8 @@ fix_dates(df, date = NULL, format = NULL)
 \item{format}{The format of the date.}
 }
 \description{
-Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy_hms (or starting with day instead of month) into valid date classes. It will return an error it if cannot coerce the date itself.
+Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy_hms (or starting with day instead of month) into valid date classes.
+It will return an error it if cannot coerce the date itself.
 }
 \examples{
 \dontrun{

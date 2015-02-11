@@ -2,7 +2,7 @@
 #' Calculate prevalence within each region of aggregation
 #' @param data A line list-type data frame (one line per case), including a column with the region in which the case occurred
 #' @param pops A data frame containing one line per region in 'data', with first column for region name and second for population
-#' @param region A string containing the name of the column specifying the region for each case
+#' @param region.head A string containing the name of the column specifying the region for each case
 #' @param conf.level Level of confidence interval required for prevalence estimates.
 #' @return A data frame containing total population, number of cases and prevalence by region
 calculate_prevalence <- function(data, pops = NULL, conf.level = 0.95, region.head = "region") {

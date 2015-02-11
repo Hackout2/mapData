@@ -14,7 +14,7 @@ calculate_prevalence(data, pops = NULL, conf.level = 0.95,
 
 \item{conf.level}{Level of confidence interval required for prevalence estimates.}
 
-\item{region}{A string containing the name of the column specifying the region for each case}
+\item{region.head}{A string containing the name of the column specifying the region for each case}
 }
 \value{
 A data frame containing total population, number of cases and prevalence by region

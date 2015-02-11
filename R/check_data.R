@@ -23,13 +23,13 @@ test_long <- function(x) {
 #' 
 #' @param df input data.frame
 #' @param lat column name of the latitude data
-#' @param column name of the longitude data
+#' @param long column name of the longitude data
 #' Checks line list data for valid locations
 #' @importFrom assertthat assert_that not_empty
-#' @import dplyr
 #' @examples \dontrun{
 #' # This one below is obviously a trivial example
-#' # The iris dataset contains no spatial information but we can pretend that these two columns are lat/long
+#' # The iris dataset contains no spatial information but we can 
+#' pretend that these two columns are lat/long
 #' check_data(iris, 'Petal.Length', 'Petal.Width')
 #' # Now let's add an incorrect longitude
 #' iris$Petal.Width <- -1800
@@ -76,7 +76,8 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
 }  # full function 
 #' Converts columns with dates into a R date class
 #'
-#' Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy_hms (or starting with day instead of month) into valid date classes. It will return an error it if cannot coerce the date itself.
+#' Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy_hms (or starting with day instead of month) into valid date classes. 
+#' It will return an error it if cannot coerce the date itself.
 #' @param df The input data.frame
 #' @param  date The column name containing the dates
 #' @param  format The format of the date. 
@@ -94,4 +95,28 @@ fix_dates <- function(df, date = NULL, format = NULL) {
     df[, which(names(df) %in% date)] <- format(df[, which(names(df) %in% date)])
     df
 }
-new <- fix_dates(z, "start.date", "dmy") 
+
+
+#' sanitize_text
+#'
+#' Removes UTF8 characters from text columns
+#' @param input_text The input text
+#' @export
+#' @importFrom assertthat assert_that
+#' @examples \dontrun{
+#' sanitize_text("This is some bad text \U3e32393cs that contains utf-8 characters")
+#'}
+sanitize_text <- function(input_text) {
+  assert_that(is.character(input_text))
+  sanitize.each.element <- function(elem) {
+    if (Encoding(elem) == "unknown")
+      enc <- "ASCII"
+    else
+      enc <- Encoding(elem)
+    
+    iconv(elem, from=enc, to="ASCII", sub="")
+  }
+  input_text <- sapply(input_text, sanitize.each.element)
+  names(input_text) <- NULL
+  input_text
+}
