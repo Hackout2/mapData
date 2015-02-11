@@ -21,10 +21,21 @@ test_long <- function(x) {
 }
 #' Check Data
 #' 
+#' @param df input data.frame
+#' @param lat column name of the latitude data
+#' @param column name of the longitude data
 #' Checks line list data for valid locations
-#' @importFrom assertthat assert_that
+#' @importFrom assertthat assert_that not_empty
 #' @import dplyr
-#' 
+#' @examples \dontrun{
+#' # This one below is obviously a trivial example
+#' # The iris dataset contains no spatial information but we can pretend that these two columns are lat/long
+#' check_data(iris, "Petal.Length", "Petal.Width")
+#' # Now let's add an incorrect longitude
+#' iris$Petal.Width <- -1800
+#' check_data(iris, "Petal.Length", "Petal.Width")
+#' # This should return FALSE
+#' }
 check_data <- function(df = NULL, lat = NULL, long = NULL) {
     if (not_empty(df)) 
         {

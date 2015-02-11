@@ -6,7 +6,26 @@
 \usage{
 check_data(df = NULL, lat = NULL, long = NULL)
 }
+\arguments{
+\item{df}{input data.frame}
+
+\item{lat}{column name of the latitude data}
+
+\item{column}{name of the longitude data
+Checks line list data for valid locations}
+}
 \description{
-Checks line list data for valid locations
+Check Data
+}
+\examples{
+\dontrun{
+# This one below is obviously a trivial example
+# The iris dataset contains no spatial information but we can pretend that these two columns are lat/long
+check_data(iris, "Petal.Length", "Petal.Width")
+# Now let's add an incorrect longitude
+iris$Petal.Width <- -1800
+check_data(iris, "Petal.Length", "Petal.Width")
+# This should return FALSE
+}
 }
 
