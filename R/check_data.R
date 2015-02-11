@@ -30,10 +30,10 @@ test_long <- function(x) {
 #' @examples \dontrun{
 #' # This one below is obviously a trivial example
 #' # The iris dataset contains no spatial information but we can pretend that these two columns are lat/long
-#' check_data(iris, "Petal.Length", "Petal.Width")
+#' check_data(iris, 'Petal.Length', 'Petal.Width')
 #' # Now let's add an incorrect longitude
 #' iris$Petal.Width <- -1800
-#' check_data(iris, "Petal.Length", "Petal.Width")
+#' check_data(iris, 'Petal.Length', 'Petal.Width')
 #' # This should return FALSE
 #' }
 check_data <- function(df = NULL, lat = NULL, long = NULL) {
@@ -42,7 +42,6 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
             if (is.null(lat) && is.null(long)) {
                 expected <- c("latitude" %in% names(df) && "longitude" %in% names(df), 
                   "lat" %in% names(df) && "long" %in% names(df))  # end of lat/long else 
-                
                 if (any(expected) == FALSE) {
                   message("Could not detect columns containing lat/long. Please specify in function call")
                   return(FALSE)
@@ -58,11 +57,11 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
                   long_check <- test_long(df$long)
                 }
             } else {
-              # If the user specifies a non-standard name for lat and long
-              lat <- df[, which(names(df) %in% lat)]
-              long <- df[, which(names(df) %in% long)]
-              lat_check <- test_lat(lat)
-              long_check <- test_long(long)
+                # If the user specifies a non-standard name for lat and long
+                lat <- df[, which(names(df) %in% lat)]
+                long <- df[, which(names(df) %in% long)]
+                lat_check <- test_lat(lat)
+                long_check <- test_long(long)
                 # if they specify column names
             }
             if (!lat_check) {
@@ -75,8 +74,6 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
             }
         }  # not_empty
 }  # full function 
-
-
 #' Converts columns with dates into a R date class
 #'
 #' Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy_hms (or starting with day instead of month) into valid date classes. It will return an error it if cannot coerce the date itself.
@@ -84,19 +81,17 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
 #' @param  date The column name containing the dates
 #' @param  format The format of the date. 
 #' @export
+#' @import lubridate
 #' @examples \dontrun{
-#' new <- fix_dates(goat_data, "start.date", "dmy")
+#' new <- fix_dates(goat_data, 'start.date', 'dmy')
 #'}
 fix_dates <- function(df, date = NULL, format = NULL) {
-  if(is.null(format)) stop("Please specify a format. Formats can be mdy, mdy_h, mdy_hm, mdy_hms, ymd, ymd_h, ymd_hm, ymd_hms")
-  
-  if(is.null(date)) stop("Please specify a date column")
-
-  format <- match.fun(format)
-  df[,which(names(df) %in% date)] <- format(df[,which(names(df) %in% date)])
-  df
+    if (is.null(format)) 
+        stop("Please specify a format. Formats can be mdy, mdy_h, mdy_hm, mdy_hms, ymd, ymd_h, ymd_hm, ymd_hms")
+    if (is.null(date)) 
+        stop("Please specify a date column")
+    format <- match.fun(format)
+    df[, which(names(df) %in% date)] <- format(df[, which(names(df) %in% date)])
+    df
 }
-
-new <- fix_dates(z, "start.date", "dmy")
-
-
+new <- fix_dates(z, "start.date", "dmy") 

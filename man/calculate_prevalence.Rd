@@ -4,12 +4,15 @@
 \alias{calculate_prevalence}
 \title{Calculate prevalence within each region of aggregation}
 \usage{
-calculate_prevalence(data, pops = NULL, region.head = "region")
+calculate_prevalence(data, pops = NULL, conf.level = 0.95,
+  region.head = "region")
 }
 \arguments{
 \item{data}{A line list-type data frame (one line per case), including a column with the region in which the case occurred}
 
-\item{pops}{A data frame containing one line per region in "data", with first column for region name and second for population}
+\item{pops}{A data frame containing one line per region in 'data', with first column for region name and second for population}
+
+\item{conf.level}{Level of confidence interval required for prevalence estimates.}
 
 \item{region}{A string containing the name of the column specifying the region for each case}
 }

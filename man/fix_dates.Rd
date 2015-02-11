@@ -18,7 +18,7 @@ Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy
 }
 \examples{
 \dontrun{
-new <- fix_dates(goat_data, "start.date", "dmy")
+new <- fix_dates(goat_data, 'start.date', 'dmy')
 }
 }
 

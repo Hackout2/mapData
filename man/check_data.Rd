@@ -21,10 +21,10 @@ Check Data
 \dontrun{
 # This one below is obviously a trivial example
 # The iris dataset contains no spatial information but we can pretend that these two columns are lat/long
-check_data(iris, "Petal.Length", "Petal.Width")
+check_data(iris, 'Petal.Length', 'Petal.Width')
 # Now let's add an incorrect longitude
 iris$Petal.Width <- -1800
-check_data(iris, "Petal.Length", "Petal.Width")
+check_data(iris, 'Petal.Length', 'Petal.Width')
 # This should return FALSE
 }
 }

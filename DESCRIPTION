@@ -9,5 +9,6 @@ LazyData: true
 Imports: 
   dplyr,
   assertthat,
+  lubridate,
   ggmap
 Suggests: testthat
