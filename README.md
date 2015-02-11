@@ -1,3 +1,5 @@
+[![Build_Status](https://travis-ci.org/Hackout2/mapData.svg)](https://travis-ci.org/Hackout2/mapData)
+
 
 # mapData
 
