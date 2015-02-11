@@ -3,5 +3,6 @@
 export(md_geocoder)
 export(test_lat)
 export(test_long)
-import(assertthat)
+import(dplyr)
+importFrom(assertthat,assert_that)
 importFrom(ggmap,geocode)

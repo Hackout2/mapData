@@ -22,7 +22,8 @@ test_long <- function(x) {
 #' Check Data
 #' 
 #' Checks line list data for valid locations
-#' @import assertthat
+#' @importFrom assertthat assert_that
+#' @import dplyr
 #' 
 check_data <- function(df = NULL, lat = NULL, long = NULL) {
     if (not_empty(df)) 
