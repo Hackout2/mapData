@@ -75,3 +75,28 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
             }
         }  # not_empty
 }  # full function 
+
+
+#' Converts columns with dates into a R date class
+#'
+#' Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy_hms (or starting with day instead of month) into valid date classes. It will return an error it if cannot coerce the date itself.
+#' @param df The input data.frame
+#' @param  date The column name containing the dates
+#' @param  format The format of the date. 
+#' @export
+#' @examples \dontrun{
+#' new <- fix_dates(goat_data, "start.date", "dmy")
+#'}
+fix_dates <- function(df, date = NULL, format = NULL) {
+  if(is.null(format)) stop("Please specify a format. Formats can be mdy, mdy_h, mdy_hm, mdy_hms, ymd, ymd_h, ymd_hm, ymd_hms")
+  
+  if(is.null(date)) stop("Please specify a date column")
+
+  format <- match.fun(format)
+  df[,which(names(df) %in% date)] <- format(df[,which(names(df) %in% date)])
+  df
+}
+
+new <- fix_dates(z, "start.date", "dmy")
+
+
