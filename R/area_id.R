@@ -1,27 +1,27 @@
 #############################################################
 #This section can be deleted later on, just included to have some input data
 
-library(maptools)
-library(rgdal)
-library(sp)
+# library(maptools)
+# library(rgdal)
+# library(sp)
 
-setwd("N:/Hackout2/mapR")
+# setwd("N:/Hackout2/mapR")
 
-#read data
-#linelist
-patients<- read.csv("OIE_outbreaks_France_20120510.csv")
-patients[, "ID"]<- c(seq(1: length(patients[,"departement"])))
-#shapefile
-shpfrance<- readShapeSpatial("DEPARTEMENT/DEPARTEMENT")
+# #read data
+# #linelist
+# patients<- read.csv("OIE_outbreaks_France_20120510.csv")
+# patients[, "ID"]<- c(seq(1: length(patients[,"departement"])))
+# #shapefile
+# shpfrance<- readShapeSpatial("DEPARTEMENT/DEPARTEMENT")
 
-#add right projection to shapefile
-proj4string(shpfrance) <- CRS("+init=epsg:2154")
-shpfrance <- spTransform(shpfrance, CRS("+proj=longlat +datum=WGS84"))
+# #add right projection to shapefile
+# proj4string(shpfrance) <- CRS("+init=epsg:2154")
+# shpfrance <- spTransform(shpfrance, CRS("+proj=longlat +datum=WGS84"))
 
-#transform patients dataframe into spatialpointsdataframe
-pointspatients<- SpatialPointsDataFrame(cbind(patients[,"longitude"], patients[,"latitude"]),patients)
-proj4string(pointspatients) <- CRS("+proj=longlat +datum=WGS84")
-pointspatients <- spTransform(pointspatients, CRS("+proj=longlat +datum=WGS84"))
+# #transform patients dataframe into spatialpointsdataframe
+# pointspatients<- SpatialPointsDataFrame(cbind(patients[,"longitude"], patients[,"latitude"]),patients)
+# proj4string(pointspatients) <- CRS("+proj=longlat +datum=WGS84")
+# pointspatients <- spTransform(pointspatients, CRS("+proj=longlat +datum=WGS84"))
 #############################################################################
 
 # area_id function
