@@ -2,6 +2,7 @@
 % Please edit documentation in R/area_id.R
 \name{area_id}
 \alias{area_id}
+\title{area_id function}
 \usage{
 area_id(points, polygons, polygonID)
 }
@@ -14,5 +15,8 @@ area_id(points, polygons, polygonID)
 }
 \value{
 a SpatialPolygonsDataFrame containing the inputted line list, with an additional column specifying the ID of the area per patient
+}
+\description{
+This is the function description
 }
 

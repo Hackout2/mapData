@@ -24,8 +24,9 @@
 # pointspatients <- spTransform(pointspatients, CRS("+proj=longlat +datum=WGS84"))
 #############################################################################
 
-# area_id function
-
+#'  area_id function
+#'
+#' This is the function description
 #' @param points SpatialPointsDataFrame containing the line list of patients
 #' @param polygons SpatialPolygonsDataFrame containing the areas
 #' @param polygonID columnname of the SpatialPolygonsDataFrame specifying the ID of the area
@@ -39,7 +40,7 @@ area_id<- function(points, polygons, polygonID){
                 ID<- as.factor(x[,polygonID])
                 points@data$newval<- ID
                 names(points@data)[names(points@data)=="newval"]<- polygonID
-                return(points) 
+                return(points)
         }
         else {
                 stop("ERROR: projections do not match")

@@ -11,6 +11,7 @@ Imports:
   dplyr,
   ggmap,
   lubridate,
+  lazyeval,
   maptools,
   rgdal,
   sp

@@ -11,9 +11,9 @@ Aggregate summaries on foo
 }
 \examples{
 \dontrun{
-agg_summaries(dat, var = "latitude", group = "code", mean) \%>\% head
-agg_summaries(dat, var = "latitude", group = "code", median) \%>\% head
-agg_summaries(dat, var = "latitude", group = "code", quantile, .1) \%>\% head
+agg_summaries(dat, var = "latitude", group = "code", mean)
+agg_summaries(dat, var = "latitude", group = "code", median)
+agg_summaries(dat, var = "latitude", group = "code", quantile, .1)
 }
 }
 
