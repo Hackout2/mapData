@@ -1,0 +1,34 @@
+# function to estimate 2d density of cases or prevalence
+
+#' @param points SpatialPointsDataFrame containing the line list of patients. Should include: 1) a slot @coords with an n x 2 vector giving the x and y coordinates of each case. (More than one case can have the same co-ordinates.) 2) a slot @bbox giving the maximum and minimum x and y co-ordinates. 
+
+estimate_density <- function(points){
+	
+	# x co-ordinates
+	xs <- pointspatients@coords[which(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2]))),1]
+
+	# y co-ordinates
+	ys <- pointspatients@coords[which(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2]))),2]
+
+	# number of cases at each point
+	ns <- tapply(
+					pointspatients@data[,1],
+					paste(pointspatients@coords[,1], pointspatients@coords[, 2], sep=","),
+					length)
+	
+	# construct a ppp object for use by the density estimator			
+	my.ppp <- ppp(
+					xs,
+					ys,
+					window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,]),
+					n = as.vector(ns),
+					marks = rep(1, times = sum(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2]))) )
+					)
+
+	# density estimator
+	my.density <- density(my.ppp)
+	
+	# return as a spatial grid data frame
+	return(as.SpatialGridDataFrame.im( my.density ) )
+	
+}
