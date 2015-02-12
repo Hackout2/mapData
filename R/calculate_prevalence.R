@@ -12,31 +12,32 @@
 
 calculate_prevalence <- function ( data, pops=NULL, conf.level=0.95, region.head="region", scale=1 ){
 
+	ci <- !is.null(pops)
+	
 	regioncol <- which(names(data) == region.head)
 
 	data[,regioncol] <- factor( sanitize_text(as.character(data[,regioncol])) )
-	 
-	##################################
-	# make up some populations for now. delete this later
-	if(is.null(pops))
-		pops <- data.frame(
-					region = unique(data[ order(data[,regioncol]) ,regioncol]),
-					population = ceiling(
-							as.numeric(table(data$region)) * 
-						(rlnorm( length(unique(data$region))) + 1)
-						)
-					)
-	##################################
-					
-	names(pops) <-c("region", "population")
 	
-	prev <- as.data.frame(tapply(data$departement, data$departement, length))	
+	if(!ci)
+		pops <- data.frame(
+					region = unique(data[,regioncol]),
+					population = 1
+					)
+ 				
+	names(pops) <- c("region", "population")
+	
+	prev <- as.data.frame(tapply(data[,regioncol], data[,regioncol], length))	
 	names(prev) <- "cases"
 	prev <- merge(pops, prev, by.x="region", by.y="row.names", all=TRUE)				
 	
-	prev <- cbind(prev, scale*binconf(prev$cases, prev$population))
-
-	names(prev) <- c("region", "population", "cases", "prevalence", "lower", "upper")	
+	if(ci){
+		prev <- cbind(prev, scale*binconf(prev$cases, prev$population, alpha=1-conf.level))
+		names(prev) <- c("region", "population", "cases", "prevalence", "lower", "upper")
+		}
+	else	{
+		prev <- cbind(prev, scale*prev$cases/prev$population)
+		names(prev) <- c("region", "population", "cases", "prevalence")		
+	}
 
 	return(prev)
 }
