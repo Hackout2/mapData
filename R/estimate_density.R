@@ -1,6 +1,10 @@
 # function to estimate 2d density of cases or prevalence
 
+#' Produce a 2-d estimated intensity function (cases per unit area) from geographical location of cases. Weighting by 1/(local population density) gives an estimate of prevalence.
+
 #' @param points SpatialPointsDataFrame containing the line list of patients. Should include: 1) a slot @coords with an n x 2 vector giving the x and y coordinates of each case. (More than one case can have the same co-ordinates.) 2) a slot @bbox giving the maximum and minimum x and y co-ordinates. 
+
+#' @return A SpatialGridDataFrame object containing intensity/prevalence estimates (@data$v), at a grid of points (@grid). 
 
 estimate_density <- function(points){
 	
