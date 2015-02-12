@@ -3,6 +3,7 @@ library(maptools)
 library(assertthat)
 library(Hmisc)
 library(fields)
+library(RColorBrewer)
 
 source("check_data.R")
 source("calculate_prevalence.R")
@@ -37,6 +38,8 @@ calculate_prevalence_unusual_pval = function(data,pops=NULL,conf.level=0.95,regi
     p.values = sapply(1:nrow(prev),function(i) unusual.performance.1region(data=data,pops=pops,region.head=region.head,region.i=prev$region[i]))
     p.bonferroni = 1-(1-p.values)^nrow(prev)
     prev$p.val.bonferroni = p.bonferroni
+    prev$sign = sign(prev$prevalence-sum(prev$cases)/sum(prev$population))
+    
     return(prev)
 }
 
@@ -55,14 +58,19 @@ n.cols = 100
 col.breaks = seq(0-1e-10,max(prev$prevalence)+1e-10,length.out=n.cols+1)
 
 par(mfrow=c(1,2))
-my.cols = tim.colors(n.cols)
+colors = brewer.pal(5,"RdYlBu")
+pal = colorRampPalette(colors)
+my.cols = rev(pal(n.cols))
+
 col.breaks = seq(0-1e-10,max(prev$prevalence)+1e-10,length.out=n.cols+1)
 plot(shp,col=my.cols[findInterval(prev$prevalence,col.breaks)])
 image.plot(legend.only=TRUE,col=my.cols,zlim=range(col.breaks),horizontal=TRUE)
 title(main="prevalence")
 
-my.cols = heat.colors(n.cols)
-col.breaks=seq(-1e-10,1+1e-10,length.out=n.cols+1)
-plot(shp,col=my.cols[findInterval(prev$p.val.bonferroni,col.breaks)])
-image.plot(legend.only=TRUE,col=my.cols,zlim=range(col.breaks),horizontal=TRUE)
+p.val.2ended = prev$p.val.bonferroni
+p.val.2ended[prev$sign==-1] = 2-prev$p.val.bonferroni[prev$sign==-1]
+p.val.2ended = 2-p.val.2ended
+col.breaks=c(seq(-1e-10,0.1,length.out=n.cols/2),1,seq(1.9,2+1e-10,length.out=n.cols/2))
+plot(shp,col=my.cols[findInterval(p.val.2ended,col.breaks)])
+image.plot(legend.only=TRUE,col=my.cols,breaks=col.breaks,horizontal=TRUE,zlim=range(col.breaks))
 title(main="p-value")
