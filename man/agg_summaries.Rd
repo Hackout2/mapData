@@ -4,7 +4,18 @@
 \alias{agg_summaries}
 \title{agg_summaries}
 \usage{
-agg_summaries(foo, var, group, FUN = mean, quants = NULL)
+agg_summaries(input_df, var, group, FUN = mean, quants = NULL)
+}
+\arguments{
+\item{input_df}{The input line incidence file}
+
+\item{var}{Variable to aggregate}
+
+\item{group}{Variable to group by}
+
+\item{FUN}{use mean or median}
+
+\item{quants}{If you need quantiles, skip FUN and set the probability here.}
 }
 \description{
 Aggregate summaries on foo

@@ -3,8 +3,12 @@
 #'
 #' Aggregate summaries on foo
 #'
+#' @param input_df The input line incidence file
+#' @param  var Variable to aggregate
+#' @param  group Variable to group by
+#' @param  FUN use mean or median
+#' @param  quants If you need quantiles, skip FUN and set the probability here. 
 #' @import dplyr
-#' @import assertthat
 #' @importFrom lazyeval interp
 #' @import maptools
 #' @export
@@ -15,13 +19,16 @@
 #' agg_summaries(dat, var = "latitude", group = "code", quantile, 1)
 #' agg_summaries(dat, var = "latitude", group = "code", quants, .25)
 #' }
-agg_summaries <- function(foo, var, group, FUN = mean, quants = NULL) {
+
+
+
+agg_summaries <- function(input_df, var, group, FUN = mean, quants = NULL) {
   if(is.null(quants)) {
   fun <- match.fun(FUN) }
   else {
     fun <- function(var, probs = quants) { quantile(var, probs) }
   }
-  foo %>% group_by_(group) %>% summarise_(.dots = interp(~fun(var), var = as.name(var))) %>% select(everything(), aggregate = starts_with("fun"))
+  input_df %>% group_by_(group) %>% summarise_(.dots = interp(~fun(var), var = as.name(var))) %>% select(everything(), aggregate = starts_with("fun"))
 }
 
 
