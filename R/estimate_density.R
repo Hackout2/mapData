@@ -4,6 +4,8 @@
 
 #' @param points SpatialPointsDataFrame containing the line list of patients. Should include: 1) a slot @coords with an n x 2 vector giving the x and y coordinates of each case. (More than one case can have the same co-ordinates.) 2) a slot @bbox giving the maximum and minimum x and y co-ordinates. 
 
+#' @param weights If required, the local population density at each (x, y) coordinate.
+
 #' @return A SpatialGridDataFrame object containing intensity/prevalence estimates (@data$v), at a grid of points (@grid). 
 
 estimate_density <- function(points, weights=NULL){
@@ -30,7 +32,13 @@ estimate_density <- function(points, weights=NULL){
 					)
 
 	# density estimator
-	my.density <- density(my.ppp, weights=weights)
+	
+	if(is.null(weights))
+		my.weights <- NULL
+	else
+		my.weights <- weights[which(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2])))]
+
+	my.density <- density(	my.ppp, my.weights)
 	
 	# return as a spatial grid data frame
 	return(as.SpatialGridDataFrame.im( my.density ) )
