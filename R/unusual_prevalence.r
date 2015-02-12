@@ -74,3 +74,19 @@ col.breaks=c(seq(-1e-10,0.1,length.out=n.cols/2),1,seq(1.9,2+1e-10,length.out=n.
 plot(shp,col=my.cols[findInterval(p.val.2ended,col.breaks)])
 image.plot(legend.only=TRUE,col=my.cols,breaks=col.breaks,horizontal=TRUE,zlim=range(col.breaks))
 title(main="p-value")
+
+mean.prev = sum(prev$cases)/sum(prev$population)
+sample.size = round(10^seq(4,7,length.out=100))
+CI = binconf(round(mean.prev*sample.size),sample.size)
+
+pct.2.5 = sapply(1:length(sample.size), function(i) qbinom(1-(1-0.025)^(1/nrow(prev)),size=sample.size[i],prob=mean.prev)/sample.size[i])
+pct.97.5 = sapply(1:length(sample.size), function(i) qbinom((1-0.025)^(1/nrow(prev)),size=sample.size[i],prob=mean.prev)/sample.size[i])
+
+
+plot(prev$population,prev$prevalence,col=my.cols[findInterval(p.val.2ended,col.breaks)],log="x")
+lines(c(1,max(prev$population)),rep(mean.prev,2),lty=2,col="grey")
+lines(pop,CI[,"Lower"],col=2)
+lines(pop,CI[,"Upper"],col=2)
+
+lines(sample.size,pct.2.5,col=4)
+lines(sample.size,pct.97.5,col=4)
