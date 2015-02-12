@@ -4,7 +4,7 @@
 \alias{agg_summaries}
 \title{agg_summaries}
 \usage{
-agg_summaries(foo, var, group, FUN = mean, ...)
+agg_summaries(foo, var, group, FUN = mean, quants = NULL)
 }
 \description{
 Aggregate summaries on foo
@@ -13,7 +13,9 @@ Aggregate summaries on foo
 \dontrun{
 agg_summaries(dat, var = "latitude", group = "code", mean)
 agg_summaries(dat, var = "latitude", group = "code", median)
-agg_summaries(dat, var = "latitude", group = "code", quantile, .1)
+# For quantiles, use quants arg and provide the probability
+agg_summaries(dat, var = "latitude", group = "code", quantile, 1)
+agg_summaries(dat, var = "latitude", group = "code", quants, .25)
 }
 }
 

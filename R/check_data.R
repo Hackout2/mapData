@@ -20,7 +20,7 @@ test_long <- function(x) {
     all(x > -180 & x < 180)
 }
 #' Check Data
-#' 
+#'
 #' @param df input data.frame
 #' @param lat column name of the latitude data
 #' @param long column name of the longitude data
@@ -28,7 +28,7 @@ test_long <- function(x) {
 #' @importFrom assertthat assert_that not_empty
 #' @examples \dontrun{
 #' # This one below is obviously a trivial example
-#' # The iris dataset contains no spatial information but we can 
+#' # The iris dataset contains no spatial information but we can
 #' pretend that these two columns are lat/long
 #' check_data(iris, 'Petal.Length', 'Petal.Width')
 #' # Now let's add an incorrect longitude
@@ -37,11 +37,11 @@ test_long <- function(x) {
 #' # This should return FALSE
 #' }
 check_data <- function(df = NULL, lat = NULL, long = NULL) {
-    if (not_empty(df)) 
+    if (not_empty(df))
         {
             if (is.null(lat) && is.null(long)) {
-                expected <- c("latitude" %in% names(df) && "longitude" %in% names(df), 
-                  "lat" %in% names(df) && "long" %in% names(df))  # end of lat/long else 
+                expected <- c("latitude" %in% names(df) && "longitude" %in% names(df),
+                  "lat" %in% names(df) && "long" %in% names(df))  # end of lat/long else
                 if (any(expected) == FALSE) {
                   message("Could not detect columns containing lat/long. Please specify in function call")
                   return(FALSE)
@@ -73,23 +73,23 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
                 return(FALSE)
             }
         }  # not_empty
-}  # full function 
+}  # full function
 #' Converts columns with dates into a R date class
 #'
-#' Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy_hms (or starting with day instead of month) into valid date classes. 
+#' Using lubridate, this function will transform dates from mdy, mdy_h, mdy_hm, mdy_hms (or starting with day instead of month) into valid date classes.
 #' It will return an error it if cannot coerce the date itself.
 #' @param df The input data.frame
 #' @param  date The column name containing the dates
-#' @param  format The format of the date. 
+#' @param  format The format of the date.
 #' @export
-#' @import lubridate
+#' @importFrom lubridate mdy mdy_h mdy_hm mdy_hms dmy dmy_h dmy_hm dmy_hms
 #' @examples \dontrun{
 #' new <- fix_dates(goat_data, 'start.date', 'dmy')
 #'}
 fix_dates <- function(df, date = NULL, format = NULL) {
-    if (is.null(format)) 
+    if (is.null(format))
         stop("Please specify a format. Formats can be mdy, mdy_h, mdy_hm, mdy_hms, ymd, ymd_h, ymd_hm, ymd_hms")
-    if (is.null(date)) 
+    if (is.null(date))
         stop("Please specify a date column")
     format <- match.fun(format)
     df[, which(names(df) %in% date)] <- format(df[, which(names(df) %in% date)])
@@ -102,7 +102,7 @@ fix_dates <- function(df, date = NULL, format = NULL) {
 #' Removes UTF8 characters from text columns
 #' @param input_text The input text
 #' @export
-#' @importFrom assertthat assert_that
+#' @importFrom assertthat assert_that not_empty
 #' @examples \dontrun{
 #' sanitize_text("This is some bad text \U3e32393cs that contains utf-8 characters")
 #'}
@@ -113,7 +113,7 @@ sanitize_text <- function(input_text) {
       enc <- "ASCII"
     else
       enc <- Encoding(elem)
-    
+
     iconv(elem, from=enc, to="ASCII", sub="")
   }
   input_text <- sapply(input_text, sanitize.each.element)
