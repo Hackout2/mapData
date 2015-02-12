@@ -6,7 +6,7 @@
 
 #' @return A SpatialGridDataFrame object containing intensity/prevalence estimates (@data$v), at a grid of points (@grid). 
 
-estimate_density <- function(points){
+estimate_density <- function(points, weights=NULL){
 	
 	# x co-ordinates
 	xs <- pointspatients@coords[which(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2]))),1]
@@ -30,7 +30,7 @@ estimate_density <- function(points){
 					)
 
 	# density estimator
-	my.density <- density(my.ppp)
+	my.density <- density(my.ppp, weights=weights)
 	
 	# return as a spatial grid data frame
 	return(as.SpatialGridDataFrame.im( my.density ) )
