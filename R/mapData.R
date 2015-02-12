@@ -5,5 +5,13 @@
 #' @keywords datasets
 #' @name sheep_data
 #' @usage data(sheep_data)
+NULL
 
+#' France shapefile
+#'
+#' A data.frame describe the dataset here.
+#' @docType data
+#' @keywords datasets
+#' @name Francs
+#' @usage data(France)
 NULL
