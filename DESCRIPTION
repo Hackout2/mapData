@@ -6,8 +6,12 @@ Description: A set of helper functions to manipulate outbreak data in preparatio
 Depends: R (>= 3.1.2)
 License: CC0
 LazyData: true
-Imports: 
+Imports:
   assertthat,
+  dplyr,
+  ggmap,
   lubridate,
-  ggmap
+  maptools,
+  rgdal,
+  sp
 Suggests: testthat

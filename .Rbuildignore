@@ -1,2 +1,5 @@
 ^\.travis\.yml$
 mapData.Rproj
+^.*\.Rproj$
+^\.Rproj\.user$
+aggregate_summaries.r
