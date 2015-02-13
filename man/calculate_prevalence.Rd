@@ -10,7 +10,7 @@ calculate_prevalence(data, pops = NULL, conf.level = 0.95,
 \arguments{
 \item{data}{A line list-type data frame (one line per case), including a column with the region in which the case occurred}
 
-\item{pops}{A data frame containing one line per region in 'data', with first column for region name and second for population}
+\item{pops}{A data frame containing one line per region in \code{data}, with first column for region name and second for population}
 
 \item{conf.level}{Level of confidence interval required for prevalence estimates.}
 
@@ -23,5 +23,21 @@ A data frame containing total population, number of cases and prevalence by regi
 }
 \description{
 Calculate prevalence within each region of aggregation
+}
+\examples{
+my.data <- data.frame(	county.id = ceiling(3*runif(10)),
+                     	age = rlnorm(10),
+							sex = factor(floor(2*runif(10)), levels=c(0,1), labels=c("male", "female"))
+                     )
+
+my.populations <- data.frame(county.id = 1:3,
+								population = c(10, 50, 100)
+								)
+
+# example without population of each region
+calculate_prevalence(my.data, region.head="county.id")
+
+# example with populations
+calculate_prevalence(my.data, region.head="county.id", pops=my.populations)
 }
 

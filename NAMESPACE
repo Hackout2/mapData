@@ -2,6 +2,7 @@
 
 export(agg_summaries)
 export(area_id)
+export(calculate_prevalence)
 export(fix_dates)
 export(md_geocoder)
 export(sanitize_text)

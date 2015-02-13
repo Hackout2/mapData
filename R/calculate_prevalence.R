@@ -7,7 +7,7 @@
 #' @param conf.level Level of confidence interval required for prevalence estimates.
 #' @param scale Scaling with which to report prevalence (per head, per 100 000, etc.)
 #' @return A data frame containing total population, number of cases and prevalence by region
-
+#' @export
 #' @examples
 #' my.data <- data.frame(	county.id = ceiling(3*runif(10)),
 #'                      	age = rlnorm(10),
