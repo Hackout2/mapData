@@ -1,4 +1,6 @@
 #' function to calculate prevalence, by aggregated region
+#' 
+#' @import Hmisc
 #'
 #' Calculate prevalence within each region of aggregation
 #' @param data A line list-type data frame (one line per case), including a column with the region in which the case occurred
