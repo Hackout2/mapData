@@ -14,7 +14,7 @@ Removes UTF8 characters from text columns
 }
 \examples{
 \dontrun{
-sanitize_text("This is some bad text \\U3e32393cs that contains utf-8 characters")
+sanitize_text('This is some bad text \\U3e32393cs that contains utf-8 characters')
 }
 }
 

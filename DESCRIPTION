@@ -13,6 +13,5 @@ Imports:
   assertthat,
   lazyeval,
   maptools,
-  rgdal,
   sp
 Suggests: testthat
