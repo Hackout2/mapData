@@ -4,3 +4,4 @@ mapData.Rproj
 ^\.Rproj\.user$
 aggregate_summaries.r
 exampledata.csv
+R/unusual_prevalence.R
