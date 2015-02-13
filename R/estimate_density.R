@@ -6,7 +6,7 @@
 #' @param density_data A data frame with columns x, y and (corrected) number of individuals, as output by the \code{density_data} function.
 #' @param show.density Set to TRUE to plot the data and calculated density.
 
-#' @return A SpatialGridDataFrame object containing intensity/prevalence estimates (\code{@data$v}), at a grid of points (\code{@grid}). 
+#' @return A SpatialGridDataFrame object containing intensity/prevalence estimates (\code{@@data$v}), at a grid of points (\code{@@grid}). 
 
 #' @examples 
 #' # simulate a line list of patient locations
