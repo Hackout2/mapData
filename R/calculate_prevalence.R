@@ -31,6 +31,8 @@ calculate_prevalence <- function ( data, pops=NULL, conf.level=0.95, region.head
 	prev <- merge(pops, prev, by.x="region", by.y="row.names", all=TRUE)
 	prev$cases[is.na(prev$cases)] = 0
 	
+	#print(prev)
+	
 	if(ci){
 		prev <- cbind(prev, scale*binconf(prev$cases, prev$population, alpha=1-conf.level))
 		names(prev) <- c("region", "population", "cases", "prevalence", "lower", "upper")
