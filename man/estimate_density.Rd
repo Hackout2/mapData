@@ -4,16 +4,30 @@
 \alias{estimate_density}
 \title{Estimate density}
 \usage{
-estimate_density(density_data)
+estimate_density(density_data, show.density = FALSE)
 }
 \arguments{
-\item{density_data}{A data frame with columns x, y and (corrected) number of individuals, as output by the density_data function.}
+\item{density_data}{A data frame with columns x, y and (corrected) number of individuals, as output by the \code{density_data} function.}
+
+\item{show.density}{Set to TRUE to plot the data and calculated density.}
 }
 \value{
-A SpatialGridDataFrame object containing intensity/prevalence estimates (@data$v), at a grid of points (@grid).
+A SpatialGridDataFrame object containing intensity/prevalence estimates (\code{@data$v}), at a grid of points (\code{@grid}).
 }
 \description{
 function to estimate 2d density, from data frame output by density_data
 Produce a 2-d estimated intensity function (cases per unit area) from an (x, y, (corrected) counts) data frame.
+}
+\examples{
+# simulate a line list of patient locations
+my.linelist <- data.frame(	longitude = round(runif(100, 0, 10), 0.01),
+								latitude = round(runif(100, 0, 10), 0.01)
+							)
+
+# transform patients dataframe into spatialpointsdataframe
+pointspatients <- SpatialPointsDataFrame(my.linelist, data=data.frame(id=1:100))
+
+my.density.data <- density_data(pointspatients)
+my.density.estimate <- estimate_density(my.density.data, show.density=TRUE)
 }
 

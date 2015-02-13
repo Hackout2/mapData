@@ -5,7 +5,7 @@
 #'
 #' Process a SpatialPointsDataFrame to give numbers of cases at each unique (x,y) location. Weighting by 1/(local population density) gives corrected numbers which can be used to calculate estimated prevalence.
 
-#' @param points SpatialPointsDataFrame containing the line list of patients. Should include: 1) a slot \code{@coords} with an n x 2 vector giving the x and y coordinates of each case. (More than one case can have the same co-ordinates.) 2) a slot \code{@bbox} giving the maximum and minimum x and y co-ordinates. 
+#' @param points SpatialPointsDataFrame containing the line list of patients. Should include: 1) a slot \code{@@coords} with an n x 2 vector giving the x and y coordinates of each case. (More than one case can have the same co-ordinates.) 2) a slot \code{@@bbox} giving the maximum and minimum x and y co-ordinates. 
 
 #' @param weights If required, the local population density at each (x, y) coordinate.
 
