@@ -22,7 +22,7 @@ calculate_prevalence(data, pops = NULL, conf.level = 0.95,
 A data frame containing total population, number of cases and prevalence by region
 }
 \description{
-Calculate prevalence within each region of aggregation
+function to calculate prevalence, by aggregated region
 }
 \examples{
 my.data <- data.frame(	county.id = ceiling(3*runif(10)),
