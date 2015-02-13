@@ -37,10 +37,10 @@ test_long <- function(x) {
 #' # This should return FALSE
 #' }
 check_data <- function(df = NULL, lat = NULL, long = NULL) {
-    if (not_empty(df))
+    if (not_empty(df)) 
         {
             if (is.null(lat) && is.null(long)) {
-                expected <- c("latitude" %in% names(df) && "longitude" %in% names(df),
+                expected <- c("latitude" %in% names(df) && "longitude" %in% names(df), 
                   "lat" %in% names(df) && "long" %in% names(df))  # end of lat/long else
                 if (any(expected) == FALSE) {
                   message("Could not detect columns containing lat/long. Please specify in function call")
@@ -87,16 +87,14 @@ check_data <- function(df = NULL, lat = NULL, long = NULL) {
 #' new <- fix_dates(goat_data, 'start.date', 'dmy')
 #'}
 fix_dates <- function(df, date = NULL, format = NULL) {
-    if (is.null(format))
+    if (is.null(format)) 
         stop("Please specify a format. Formats can be mdy, mdy_h, mdy_hm, mdy_hms, ymd, ymd_h, ymd_hm, ymd_hms")
-    if (is.null(date))
+    if (is.null(date)) 
         stop("Please specify a date column")
     format <- match.fun(format)
     df[, which(names(df) %in% date)] <- format(df[, which(names(df) %in% date)])
     df
 }
-
-
 #' sanitize_text
 #'
 #' Removes UTF8 characters from text columns
@@ -104,19 +102,16 @@ fix_dates <- function(df, date = NULL, format = NULL) {
 #' @export
 #' @importFrom assertthat assert_that not_empty
 #' @examples \dontrun{
-#' sanitize_text("This is some bad text \U3e32393cs that contains utf-8 characters")
+#' sanitize_text('This is some bad text \U3e32393cs that contains utf-8 characters')
 #'}
 sanitize_text <- function(input_text) {
-  assert_that(is.character(input_text))
-  sanitize.each.element <- function(elem) {
-    if (Encoding(elem) == "unknown")
-      enc <- "ASCII"
-    else
-      enc <- Encoding(elem)
-
-    iconv(elem, from=enc, to="ASCII", sub="")
-  }
-  input_text <- sapply(input_text, sanitize.each.element)
-  names(input_text) <- NULL
-  input_text
-}
+    assert_that(is.character(input_text))
+    sanitize.each.element <- function(elem) {
+        if (Encoding(elem) == "unknown") 
+            enc <- "ASCII" else enc <- Encoding(elem)
+        iconv(elem, from = enc, to = "ASCII", sub = "")
+    }
+    input_text <- sapply(input_text, sanitize.each.element)
+    names(input_text) <- NULL
+    input_text
+} 

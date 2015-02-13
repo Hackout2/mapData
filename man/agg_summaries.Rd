@@ -22,11 +22,11 @@ Aggregate summaries on foo
 }
 \examples{
 \dontrun{
-agg_summaries(dat, var = "latitude", group = "code", mean)
-agg_summaries(dat, var = "latitude", group = "code", median)
+agg_summaries(dat, var = 'latitude', group = 'code', mean)
+agg_summaries(dat, var = 'latitude', group = 'code', median)
 # For quantiles, use quants arg and provide the probability
-agg_summaries(dat, var = "latitude", group = "code", quantile, 1)
-agg_summaries(dat, var = "latitude", group = "code", quants, .25)
+agg_summaries(dat, var = 'latitude', group = 'code', quantile, 1)
+agg_summaries(dat, var = 'latitude', group = 'code', quants, .25)
 }
 }
 
