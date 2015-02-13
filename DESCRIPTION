@@ -13,5 +13,6 @@ Imports:
   assertthat,
   lazyeval,
   maptools,
-  sp
+  sp,
+  Hmisc
 Suggests: testthat
