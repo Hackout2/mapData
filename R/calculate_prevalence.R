@@ -1,4 +1,5 @@
 #' function to calculate prevalence, by aggregated region
+#'
 #' Calculate prevalence within each region of aggregation
 #' 
 #' @import Hmisc
