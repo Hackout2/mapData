@@ -1,0 +1,349 @@
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+(names(pops))[1]
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+names(pops)
+(names(pops))[2:ncol(pops)-1]
+(names(pops))
+(names(pops))[2:(ncol(pops)-1)]
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+(names(pops))[2:(ncol(pops)-1)]
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+(names(pops))[2:(ncol(pops)-2)]
+head(pops)
+c("region", (names(pops))[2:(ncol(pops)-2)], "population", "stratvar")
+prev <- as.data.frame(tapply(data$departement, data$departement, length))
+prev <- merge(pops, prev, by.x="region", by.y="row.names", all=TRUE)
+prev
+names(prev) <- "cases"
+prev
+prev <- merge(pops, prev, by.x="region", by.y="row.names", all=TRUE)
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+print(length(c("region", (names(pops))[2:(ncol(pops)-2)], "population", "stratvar"))	)
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+print(names(pops)	)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars=c("sex", "startdate"),pops, region.head="departement")
+c(1, c(2,3), 4)
+c("1", c("2","3"), "4")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_prevalence(data, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_prevalence(data, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_prevalence(data, region.head="departement")
+pops <- NULL
+ci <- !is.null(pops)
+regioncol <- which(names(data) == region.head)
+region.head="commune"
+regioncol <- which(names(data) == region.head)
+data[,regioncol] <- factor( sanitize_text(as.character(data[,regioncol])) )
+calculate_prevalence(data, region.head="departement")
+if(!ci)#
+		pops <- data.frame(#
+					region = unique(data[,regioncol]),#
+					population = 1#
+					)
+pops
+names(pops) <- c("region", "population")
+prev <- as.data.frame(tapply(data$region, data$region, length))
+tapply(data$region, data$region, length)
+data$region
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_prevalence(data, region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+library(spatstat)
+patients<- read.csv("~/Documents/hackathon_0215/mapR/OIE_outbreaks_France_20120510.csv")
+patients[, "ID"]<- c(seq(1: length(patients[,"departement"])))
+shpfrance<- readShapeSpatial("DEPARTEMENT/DEPARTEMENT")
+pointspatients<- SpatialPointsDataFrame(cbind(patients[,"longitude"], patients[,"latitude"]),patients)
+library(sp)
+pointspatients<- SpatialPointsDataFrame(cbind(patients[,"longitude"], patients[,"latitude"]),patients)
+pointspatients
+ls(pointspatients)
+head(pointspatients)
+str(pointspatients)
+proj4string(pointspatients) <- CRS("+proj=longlat +datum=WGS84")
+str(pointspatients)
+my.ppp <- ppp(#
+pointspatients@coords,#
+window = owin(pointspatients@bbox)#
+)
+window = owin(pointspatients@bbox)
+pointspatients@bbox
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,])
+my.ppp <- ppp(#
+pointspatients@coords,#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,])#
+)
+head(pointspatients@coords)
+my.ppp <- ppp(#
+pointspatients@coords[,1],#
+pointspatients@coords[,2],#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,])#
+)
+unique(pointspatients@coords[,1], pointspatients@coords[,2])
+!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])
+!duplicated(c(1,1,1,4),c(1,1,2,4))
+duplicated(c(1,1,1,4),c(1,1,2,4))
+duplicated(data.frame(a=c(1,1,1,4),b=c(1,1,2,4)))
+data.frame(a=c(1,1,1,4),b=c(1,1,2,4))
+my.ppp <- ppp(#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1],#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2],#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,])#
+)
+Smooth((my.ppp))
+class(my.ppp)
+plot(my.ppp)
+Smooth((my.ppp), marks=1)
+my.ppp <- ppp(#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1],#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2],#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,]),
+marks=1)
+my.ppp <- ppp(#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1],#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2],#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,]),
+marks=rep(1, times=sum(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])))
+)
+Smooth((my.ppp))
+my.ppp <- ppp(#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1],#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2],#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,]),#
+marks=rep(1, times=sum(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])))#
+#
+)
+my.smooth <- Smooth((my.ppp))
+plot(my.smooth)
+tapply(
+source("/Users/joannalewis/Desktop/experiment1234.R")
+ns
+ns <- tapply(#
+pointspatients@coords[,1],#
+paste(pointspatients@coords[,1], pointspatients@coords[, 2], sep=","),#
+length)
+head(ns)
+nrow(ns)
+nrow(pointspatients@coords)
+source("/Users/joannalewis/Desktop/experiment1234.R")
+plot(my.smooth)
+is(ns)
+ns
+as.vetor(ns)
+as.vector(ns)
+source("/Users/joannalewis/Desktop/experiment1234.R")
+plot(my.smooth)
+my.ppp <- ppp(#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1],#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2],#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,]),#
+n = as.vector(ns)#
+#marks=rep(1, times=sum(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])))#
+#
+)#
+#
+my.smooth <- Smooth((my.ppp))
+my.ppp <- ppp(#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1],#
+pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2],#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,]),#
+n = as.vector(ns),#
+marks= as.vector(ns) #rep(1, times=sum(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])))#
+#
+)#
+#
+my.smooth <- Smooth((my.ppp))
+length(pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1])
+length(ns)
+source("/Users/joannalewis/Desktop/experiment1234.R")
+patients<- read.csv("~/Documents/hackathon_0215/mapR/OIE_outbreaks_France_20120510.csv")#
+patients[, "ID"]<- c(seq(1: length(patients[,"departement"])))#
+#shapefile#
+#shpfrance<- readShapeSpatial("DEPARTEMENT/DEPARTEMENT")#
+#add right projection to shapefile#
+#proj4string(shpfrance) <- CRS("+init=epsg:2154")#
+#shpfrance <- spTransform(shpfrance, CRS("+proj=longlat +datum=WGS84"))#
+#transform patients dataframe into spatialpointsdataframe#
+pointspatients<- SpatialPointsDataFrame(cbind(patients[,"longitude"], patients[,"latitude"]),patients)#
+proj4string(pointspatients) <- CRS("+proj=longlat +datum=WGS84")#
+#
+xs <- pointspatients@coords[which(duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1]
+head(xs)
+length(xs)
+ys <- pointspatients@coords[which(duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2]
+length(ys)
+plot(xs, ys)
+length(ns)
+patients<- read.csv("~/Documents/hackathon_0215/mapR/OIE_outbreaks_France_20120510.csv")#
+patients[, "ID"]<- c(seq(1: length(patients[,"departement"])))#
+#shapefile#
+#shpfrance<- readShapeSpatial("DEPARTEMENT/DEPARTEMENT")#
+#add right projection to shapefile#
+#proj4string(shpfrance) <- CRS("+init=epsg:2154")#
+#shpfrance <- spTransform(shpfrance, CRS("+proj=longlat +datum=WGS84"))#
+#transform patients dataframe into spatialpointsdataframe#
+pointspatients<- SpatialPointsDataFrame(cbind(patients[,"longitude"], patients[,"latitude"]),patients)#
+proj4string(pointspatients) <- CRS("+proj=longlat +datum=WGS84")#
+#
+xs <- pointspatients@coords[which(duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1]#
+#
+ys <- pointspatients@coords[which(duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2]#
+#
+ns <- tapply(#
+pointspatients@coords[,1],#
+paste(pointspatients@coords[,1], pointspatients@coords[, 2], sep=","),#
+length)
+length(xs)
+length(ys)
+length(ns)
+ns <- tapply(#
+pointspatients@data[,1],#
+paste(pointspatients@coords[,1], pointspatients@coords[, 2], sep=","),#
+length)
+length(ns)
+xs <- pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),1]#
+#
+ys <- pointspatients@coords[which(!duplicated(pointspatients@coords[,1], pointspatients@coords[,2])),2]#
+#
+ns <- tapply(#
+pointspatients@data[,1],#
+paste(pointspatients@coords[,1], pointspatients@coords[, 2], sep=","),#
+length)
+length(xs)
+length(ys)
+length(ns)
+xs <- pointspatients@coords[which(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2]))),1]
+length(xs)
+xs <- pointspatients@coords[which(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2]))),1]#
+#
+ys <- pointspatients@coords[which(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2]))),2]#
+#
+ns <- tapply(#
+pointspatients@data[,1],#
+paste(pointspatients@coords[,1], pointspatients@coords[, 2], sep=","),#
+length)#
+#
+my.ppp <- ppp(#
+xs,#
+ys,#
+window = owin(pointspatients@bbox[1,], pointspatients@bbox[2,]),#
+n = as.vector(ns),#
+marks= as.vector(ns) #rep(1, times=sum(duplicated(pointspatients@coords[,1], pointspatients@coords[,2])))#
+#
+)#
+#
+my.smooth <- Smooth((my.ppp))
+plot(my.smooth)
+points(xs,ys)
+my.density <- density(my.ppp)
+plot(my.density)
+points(xs,ys)
+source("/Users/joannalewis/Desktop/experiment1234.R")
+plot(my.density)
+points(xs,ys)
+estimate.density(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+estimate.density(pointspatients)
+estimate_density(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+estimate_density(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+estimate_density(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density <- estimate_density(pointspatients)
+plot(my.density)
+ls(my.density)
+library(maptools)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density <- estimate_density(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density <- estimate_density(pointspatients)
+ls(my.density)
+struct(my.density)
+str(my.density)
+plot(my.density)
+head(my.density@data$v)
+128*128
+image(matrix(my.density@data$v, nrow=128))
+source("/Users/joannalewis/Desktop/experiment1234.R")
+quartz(my.density)
+plot(my.density)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density <- estimate_density(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density <- estimate_density(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density <- estimate_density(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density <- estimate_density(pointspatients)
+plot(my.density)
+plot(my.density@data$v)
+image(matrix(my.density@data$v, nrow=128))
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/density_data.R")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.data <- density_data(pointspatients)
+head(my.density.data)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/density_data.R")
+my.density.data <- density_data(pointspatients)
+head(my.density.data)
+summary(my.density.data)
+my.estimate.density <- estimate_density(my.density.data)
+image(matrix(my.estimate.density@data$v, nrow=128))
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/density_data.R")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.data <- density_data(pointspatients)
+my.estimate.density <- estimate_density(my.density.data)
+image(matrix(my.estimate.density@data$v, nrow=128))
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+head(data)
+calculate_stratified_prevalence(data, stratify_vars = c("start.date", "sex"))
+calculate_stratified_prevalence(data, stratify.vars = c("start.date", "sex"))
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars = c("start.date", "sex"))
+stratify.cols <- which(names(data) %in% stratify.vars)
+data$stratvar <- interaction(data[, stratify.cols])
+pops$stratvar <- interaction(pops[, which(names(pops) %in% stratify.vars)])
+interaction(pops[, which(names(pops) %in% stratify.vars)])
+which(names(pops) %in% stratify.vars)]
+which(names(pops) %in% stratify.vars)
+pops
+pops <- data.frame(region=unique(data$commune),
+population=1)
+which(names(pops) %in% stratify.vars)
+names(pops)
+stratify_vars
+stratify.vars
+pops <- data.frame(region=rep(unique(data$commune), each=2),
+sex=c("male", "female"),
+population=1
+)]
+pops <- data.frame(region=rep(unique(data$commune), each=2),
+sex=c("male", "female"),
+population=1
+)
+which(names(pops) %in% stratify.vars)]
