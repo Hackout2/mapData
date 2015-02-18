@@ -1,7 +1,3 @@
-# function to calculate prevalence, by aggregated region and stratified on other factors
-
-#' Calculate prevalence within each region of aggregation
-
 #' @param data A line list-type data frame (one line per case), including a column with the region in which the case occurred and columns with stratification variables.
 #' @param pops A data frame containing one line per region/stratification variable combination in \code{data}. The first column should give the region name, then should come the stratification variables, and finally the population size in that region and stratum. If \code{pops} is \code{NULL}, the population in each area and stratum is taken as 1, and numbers of cases (rather than prevalences) are calculated.
 #' @param region.head A string containing the name of the column specifying the region for each case.
