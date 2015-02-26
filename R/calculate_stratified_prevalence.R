@@ -6,7 +6,7 @@
 #' @param scale Scaling with which to report prevalence (per head, per 100 000, etc.)
 
 #' @return A list containing 1) \code{prevalence.list}, a list of data frames containing total population, number of cases and prevalence by region, for each unique combination of stratification variables. 2) \code{stratification.levels}, a vector of the stratification levels, in the same order that the stratified prevalence data frames are presented.
-
+#' @export
 #' @examples
 #' my.data <- data.frame(	county.id = ceiling(3*runif(10)),
 #'                      	age = rlnorm(10),
