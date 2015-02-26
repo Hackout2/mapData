@@ -2,7 +2,6 @@
 % Please edit documentation in R/calculate_prevalence.R
 \name{calculate_prevalence}
 \alias{calculate_prevalence}
-\title{function to calculate prevalence, by aggregated region}
 \usage{
 calculate_prevalence(data, pops = NULL, conf.level = 0.95,
   region.head = "region", scale = 1)
@@ -20,9 +19,6 @@ calculate_prevalence(data, pops = NULL, conf.level = 0.95,
 }
 \value{
 A data frame containing total population, number of cases and prevalence by region
-}
-\description{
-function to calculate prevalence, by aggregated region
 }
 \examples{
 my.data <- data.frame(	county.id = ceiling(3*runif(10)),

@@ -2,7 +2,6 @@
 % Please edit documentation in R/calculate_stratified_prevalence.R
 \name{calculate_stratified_prevalence}
 \alias{calculate_stratified_prevalence}
-\title{Calculate prevalence within each region of aggregation}
 \usage{
 calculate_stratified_prevalence(data, stratify.vars, pops = NULL,
   region.head = "region", conf.level = 0.95, scale = 1)
@@ -22,9 +21,6 @@ calculate_stratified_prevalence(data, stratify.vars, pops = NULL,
 }
 \value{
 A list containing 1) \code{prevalence.list}, a list of data frames containing total population, number of cases and prevalence by region, for each unique combination of stratification variables. 2) \code{stratification.levels}, a vector of the stratification levels, in the same order that the stratified prevalence data frames are presented.
-}
-\description{
-Calculate prevalence within each region of aggregation
 }
 \examples{
 my.data <- data.frame(	county.id = ceiling(3*runif(10)),

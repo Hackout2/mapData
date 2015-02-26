@@ -1,0 +1,256 @@
+sub
+is(unlist(sub))
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"))
+is(data)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"))
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"))
+calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+op[[1]]
+strsplit(as.character(op[[1]]), "[.]")
+unlist(strsplit(as.character(op[[1]]), "[.]"))
+ls(op)
+op$stratification.levels
+pops <- data.frame(
+departement = rep(unique(data$departement), each=6),
+strat1 = rep(c(0,1), each=3),
+strat2 = rep(c(0,1,2), each=2)
+)
+pops
+departement = rep(unique(data$departement), each=6),
+pops <- data.frame(
+departement = rep(unique(data$departement), each=6),
+strat1 = rep(c(0,1), each=3),
+strat2 = rep(c(0,1,2))
+)
+pops
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+pops$population <- 100
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+op
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+head(pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+library(Hmisc)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+library(Hmisc)
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+names(pops)
+pops$departement <- sanitize_text(pops$departement)
+pops$departement <- sanitize_text(as.character(pops$departement))
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+pops[,c(1,5)]
+pops[,1]
+pops[,c(1,5)]
+pops[,5]
+head(pops)
+ncol(pops)
+pops[1:5,ncol(pops)]
+pops[1:5,c(1,ncol(pops))]
+pops[,c(1,ncol(pops))]
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+ls(op)
+op$prevalence.list
+ls(op)
+op$stratification.levels
+head(pops)
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+op$prevalence.list[[1]]
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement")
+op <- calculate_stratified_prevalence(data, stratify.vars = c("strat1", "strat2"), region.head="departement", pops=pops)
+head(op$prevalence.list)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+op <- calculate_prevalence(data, region.head="departement")
+op
+rlnorm(10)
+my.data <- data.frame(	county.id = ceiling(3*runif(10)),#
+                      	age = rlnorm(10),#
+							sex = factor(floor(2*runif(10)), levels=c(0,1), labels=c("male", "female))#
+                      )
+)
+)
+)
+my.data <- data.frame(	county.id = ceiling(3*runif(10)),
+age = rlnorm(10),
+sex = factor(floor(2*runif(10)), levels=c(0,1), labels=c("male", "female"))
+)
+my.data
+calculate_prevalence(my.data)
+calculate_prevalence(my.data, region.head="county.id")
+my.populations <- data.frame(county.id = 1:3,
+population = c(10, 50, 100)
+)
+my.populations
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_prevalence.R")
+calculate_prevalence(my.data, region.head="county.id", pops=my.populations)
+my.populations <- data.frame(county.id = rep(1:3, each=2*length(unique(floor(age)) ),
+age.group = factor( rep(unique(floor(age)), each=2) ),
+sex = c("male", "female),
+population = c(10, 50, 100)
+)
+my.populations <- data.frame(county.id = rep(1:3, each=2*length(unique(floor(age)) ),
+age.group = factor( rep(unique(floor(age)), each=2) ),
+sex = c("male", "female"),
+population = c(10, 50, 100)
+)
+my.populations
+rep(1:3, each=2*length(unique(floor(age)) )
+)
+county.id = rep(1:3, each=2*length(unique(floor(my.data$age))) )
+my.populations <- data.frame(county.id = rep(1:3, each=2*length(unique(floor(my.data$age))) ),
+age.group = factor( rep(unique(floor(age)), each=2) ),
+sex = c("male", "female"),
+population = c(10, 50, 100)
+)
+my.populations <- data.frame(county.id = rep(1:3, each=2*length(unique(floor(my.data$age))) ),
+age.group = factor( rep(unique(floor(my.data$age)), each=2) ),
+sex = c("male", "female"),
+population = c(10, 50, 100)
+)
+my.populations
+my.data[!duplicated(my.data),]
+my.data$age.group = floor(my.data$age)
+my.data
+my.data[!duplicated(my.data[,(1,3,4)]),]
+my.data[,(1,3,4)]
+my.data[!duplicated(my.data[,c(1,3,4)]),]
+my.populations <- my.data[!duplicated(my.data[,c(1,3,4)]),]
+my.populations
+my.populations$population <- abs(rnorm(nrow(my.populations), 10, 5))
+my.populations
+my.populations$population <- nrow(my.data) + ceiling(abs(rnorm(nrow(my.populations), 10, 5)))
+my.populations
+calculate_stratified_prevalence(my.data, stratify.vars=c("sex", "age.group"), region.head="county.id")
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/calculate_stratified_prevalence.R")
+calculate_stratified_prevalence(my.data, stratify.vars=c("sex", "age.group"), pops=my.populations, region.head="county.id")
+library(rgdal)#
+library(sp)#
+library(spatstat)
+shpfrance <- readShapeSpatial("~/Documents/hackathon_0215/France.rda")
+library(maptools)
+shpfrance <- readShapeSpatial("~/Documents/hackathon_0215/France.rda")
+shpfrance <- load("~/Documents/hackathon_0215/France.rda")
+shpfrance <- load("France.rda")
+ls(shpfrance)
+ls()
+is(shpfrance)
+shpfrance
+shpfrance$shp
+rm(list=ls())
+load("France.rda")
+ls()
+shp
+ls(shp)
+lstr(shp)
+str(shp)
+library(maptools)
+readShapeSpatial(shp)
+is(shp)
+my.linelist <- data.frame(	longitude = round(runif(100, 0, 10), 0.01),
+latitude = round(runif(100, 0, 10), 0.01))
+head(my.linelist)
+nrow(my.linelist)
+sum(duplicated(my.linelist))
+which(duplicated(my.linelist))
+plot(my.linelist$longitude, my.linelist$latitude)
+plot(my.linelist$longitude, my.linelist$latitude, pch=1:100)
+pointspatients <- SpatialPointsDataFrame(my.linelist)
+pointspatients <- SpatialPoints(my.linelist)
+str(pointspatients)
+pointspatients@bbox
+#' density_data(pointspatients)
+density_data(pointspatients)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/density_data.R")
+density_data(pointspatients)
+pointspatients@data
+pointspatients@data <- NULL
+library(sp)
+pointspatients <- SpatialPointsDataFrame(my.linelist)
+pointspatients <- SpatialPointsDataFrame(my.linelist, data=data.frame(id=1:100))
+density_data(pointspatients)
+my.density.data <- density_data(pointspatients)
+str(my.density.data)
+my.density.estimate <- estimate_density(my.density.data)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data)
+head(my.density.data)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data)
+x <- c(NA, 1:3, -1:1/0); x#
+range(x)
+range(x, na.rm = TRUE)
+range(x, finite = TRUE)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data)
+str(my.density.estimate)
+image(my.density.estimate@data$v)
+image(matrix(my.density.estimate@data$v,nrow=128))
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data, show.density=TRUE)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data, show.density=TRUE)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data, show.density=TRUE)
+density_data
+my.density.data
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data, show.density=TRUE)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data, show.density=TRUE)
+source("/Users/joannalewis/Documents/hackathon_0215/mapData/R/estimate_density.R")
+my.density.estimate <- estimate_density(my.density.data, show.density=TRUE)
+my.linelist <- data.frame(	longitude = round(runif(100, 0, 10), 0.01),
+latitude = round(runif(100, 0, 10), 0.01)
+)
+pointspatients <- SpatialPointsDataFrame(my.linelist, data=data.frame(id=1:100))
+my.density.data <- density_data(pointspatients)
+my.density.estimate <- estimate_density(my.density.data, show.density=TRUE)
+head(my.density.data)
