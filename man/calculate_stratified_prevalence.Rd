@@ -2,6 +2,8 @@
 % Please edit documentation in R/calculate_stratified_prevalence.R
 \name{calculate_stratified_prevalence}
 \alias{calculate_stratified_prevalence}
+\title{calculate_prevalence_prevalence}
+
 \usage{
 calculate_stratified_prevalence(data, stratify.vars, pops = NULL,
   region.head = "region", conf.level = 0.95, scale = 1)
