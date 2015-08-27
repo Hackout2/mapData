@@ -7,7 +7,7 @@
 #' dataset is supplied, Fisher's exact test is used to calculate the
 #' p-value. If no population data is supplied, as null hypothesis
 #' Poisson distributed number of cases per region is assumed.
-#' 
+#'
 #' @param data a dataframe containing the number of cases and total population for all regions in the dataset.
 #' @param pops dataframe containing the region ID in the first and the population size for each region in the dataset in the second column.
 #' @param region.head variable name of the incidence column in data.
@@ -43,17 +43,18 @@ unusual_prevalence_region <- function(data, pops, region.head, region.i) {
 #' population data is supplied, as null hypothesis Poisson distributed
 #' number of cases per region is assumed. P-values are corrected for
 #' multiple testing using the Bonferroni correction.
-#' 
+#'
 #' @param data a dataframe containing the number of cases and total population for all regions in the dataset.
 #' @param pops dataframe containing the region ID in the first and the population size for each region in the dataset in the second column
 #' @param conf.level  Confidence level to be used for calculating the confidence intervals on the prevalence estimates.
 #' @param region.head  variable name of the incidence column in data.
 #' @param scale  Scaling with which to report prevalence (per head, per 100 000, etc.)
-calculate_prevalence_unusual_pval <- function(data, pops = NULL, conf.level = 0.95, 
+#'
+calculate_prevalence_unusual_pval <- function(data, pops = NULL, conf.level = 0.95,
     region.head = "region", scale = 1) {
-    prev <- calculate_prevalence(data = data, pops = pops, conf.level = conf.level, 
+    prev <- calculate_prevalence(data = data, pops = pops, conf.level = conf.level,
         region.head = region.head, scale = scale)
-    p.values <- sapply(1:nrow(prev), function(i) unusual_prevalence_region(data = data, 
+    p.values <- sapply(1:nrow(prev), function(i) unusual_prevalence_region(data = data,
         pops = pops, region.head = region.head, region.i = prev$region[i]))
     p.bonferroni <- 1 - (1 - p.values)^nrow(prev)
     prev$p.val.bonferroni <- p.bonferroni

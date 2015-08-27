@@ -1,3 +1,7 @@
+#' Title
+#'
+#' description...
+#'
 #' @param data A line list-type data frame (one line per case), including a column with the region in which the case occurred and columns with stratification variables.
 #' @param pops A data frame containing one line per region/stratification variable combination in \code{data}. The first column should give the region name, then should come the stratification variables, and finally the population size in that region and stratum. If \code{pops} is \code{NULL}, the population in each area and stratum is taken as 1, and numbers of cases (rather than prevalences) are calculated.
 #' @param region.head A string containing the name of the column specifying the region for each case.
@@ -22,38 +26,37 @@
 #'
 #' # example with stratified population data
 #' calculate_stratified_prevalence(my.data, stratify.vars=c("sex", "age.group"), pops=my.populations, region.head="county.id")
-
-
+#'
 calculate_stratified_prevalence <- function( data, stratify.vars, pops=NULL, region.head="region", conf.level=0.95, scale=1){
-		
+
 	stratify.cols <- which(names(data) %in% stratify.vars)
-	
+
 	# add a column giving unique combination of stratification variables
 	data$stratvar <- factor(apply(as.matrix(data[,stratify.cols]), 1, paste, collapse="."))
 	if(!is.null(pops))
 		pops$stratvar <- factor(apply(
-										as.matrix(pops[, which(names(pops) %in% stratify.vars)]), 
-										1, 
-										paste, 
+										as.matrix(pops[, which(names(pops) %in% stratify.vars)]),
+										1,
+										paste,
 										collapse="."
 										) )
-	
-	# now apply the prevalence calculation function, at each level of stratification	
-	
+
+	# now apply the prevalence calculation function, at each level of stratification
+
 	prevalence <- vector("list", length(unique(data$stratvar)) )
-	
+
 	for(i in 1:length( unique(data$stratvar) ) ){
 
 		sub <- subset(data, data$stratvar == ( unique(data$stratvar) )[i])
-		
+
 		if(is.null(pops))
 			prevalence[[i]] <- calculate_prevalence( sub, NULL, conf.level, region.head, scale )
 		else
 			prevalence[[i]] <- calculate_prevalence( sub, pops[pops$stratvar == ( unique(data$stratvar) )[i], c(1, ncol(pops)-1)], conf.level, region.head, scale )}
-	
+
 	return(list(
-				stratification.levels = unique(data$stratvar), 
+				stratification.levels = unique(data$stratvar),
 				prevalence.list = prevalence
 				))
-	
+
 }
