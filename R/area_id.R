@@ -7,6 +7,7 @@
 #' @import sp
 #' @export
 #' @return a SpatialPolygonsDataFrame containing the inputted line list, with an additional column specifying the ID of the area per patient
+#'
 area_id <- function(points, polygons, polygonID) {
     if (proj4string(points) == proj4string(polygons)) {
         x <- over(points, polygons)
@@ -17,4 +18,4 @@ area_id <- function(points, polygons, polygonID) {
     } else {
         stop("ERROR: projections do not match")
     }
-} 
+}
