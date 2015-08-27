@@ -2,12 +2,14 @@
 #'
 #' function to estimate 2d density, from data frame output by density_data
 #' Produce a 2-d estimated intensity function (cases per unit area) from an (x, y, (corrected) counts) data frame.
-
+#'
 #' @param density_data A data frame with columns x, y and (corrected) number of individuals, as output by the \code{density_data} function.
 #' @param show.density Set to TRUE to plot the data and calculated density.
-
+#'
 #' @return A SpatialGridDataFrame object containing intensity/prevalence estimates (\code{@@data$v}), at a grid of points (\code{@@grid}).
-
+#'
+#' @export
+#'
 #' @examples
 #' if(require(sp)){
 #' # simulate a line list of patient locations
@@ -23,8 +25,6 @@
 #'
 #' }
 #'
-
-
 estimate_density <- function(density_data, show.density=FALSE){
 
 	# construct a ppp object for use by the density estimator

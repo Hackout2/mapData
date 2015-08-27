@@ -12,6 +12,9 @@
 #' @param pops dataframe containing the region ID in the first and the population size for each region in the dataset in the second column.
 #' @param region.head variable name of the incidence column in data.
 #' @param region.i ID of the region being tested.
+#'
+#' @export
+#'
 unusual_prevalence_region <- function(data, pops, region.head, region.i) {
     data$curr.col <- (data[, region.head] == region.i)
     if (is.null(pops)) {
@@ -49,6 +52,8 @@ unusual_prevalence_region <- function(data, pops, region.head, region.i) {
 #' @param conf.level  Confidence level to be used for calculating the confidence intervals on the prevalence estimates.
 #' @param region.head  variable name of the incidence column in data.
 #' @param scale  Scaling with which to report prevalence (per head, per 100 000, etc.)
+#'
+#' @export
 #'
 calculate_prevalence_unusual_pval <- function(data, pops = NULL, conf.level = 0.95,
     region.head = "region", scale = 1) {
