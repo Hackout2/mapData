@@ -12,6 +12,7 @@
 #' @return A data frame containing x and y co-ordinates, and (weighted) counts. For use by other functions including \code{estimate_density}.
 
 #' @examples
+#' if(require(sp)){
 #' # simulate a line list of patient locations
 #' my.linelist <- data.frame(	longitude = round(runif(100, 0, 10), 0.01),
 #'								latitude = round(runif(100, 0, 10), 0.01)
@@ -21,6 +22,7 @@
 #' 
 #' my.density.data <- density_data(pointspatients) 
 #' print(head( my.density.data ))
+#' }
 
 density_data <- function(points, weights=NULL){
 	
