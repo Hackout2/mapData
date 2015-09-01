@@ -46,6 +46,6 @@ estimate_density <- function(density_data, show.density=FALSE){
 		}
 
 	# return as a spatial grid data frame
-	return(marmap::as.SpatialGridDataFrame.im( my.density ) )
+	return(maptools::as.SpatialGridDataFrame.im( my.density ) )
 
 }

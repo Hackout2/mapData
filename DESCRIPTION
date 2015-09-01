@@ -13,7 +13,6 @@ Imports:
   assertthat,
   lazyeval,
   maptools,
-  marmap,
   sp,
   spatstat,
   Hmisc
