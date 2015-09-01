@@ -38,7 +38,7 @@ estimate_density <- function(density_data, show.density=FALSE){
 
 	# density estimator
 
-	my.density <- spatstat::density(my.ppp)
+	my.density <- spatstat::density.ppp(my.ppp)
 
 	if(show.density){
 		plot(my.density)
