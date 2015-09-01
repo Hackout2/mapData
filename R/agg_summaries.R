@@ -7,9 +7,7 @@
 #' @param  group Variable to group by
 #' @param  FUN use mean or median
 #' @param  quants If you need quantiles, skip FUN and set the probability here. 
-#' @import dplyr
 #' @importFrom lazyeval interp
-#' @import maptools
 #' @export
 #' @examples \dontrun{
 #' agg_summaries(dat, var = 'latitude', group = 'code', mean)
@@ -26,6 +24,6 @@ agg_summaries <- function(input_df, var, group, FUN = mean, quants = NULL) {
             quantile(var, probs)
         }
     }
-    input_df %>% group_by_(group) %>% summarise_(.dots = interp(~fun(var), var = as.name(var))) %>% 
-        select(everything(), aggregate = starts_with("fun"))
+    input_df %>% dplyr::group_by_(group) %>% dplyr::summarise_(.dots = interp(~fun(var), var = as.name(var))) %>% 
+        dplyr::select(everything(), aggregate = starts_with("fun"))
 } 
