@@ -31,7 +31,7 @@ estimate_density <- function(density_data, show.density=FALSE){
 	my.ppp <- spatstat::ppp(
 					density_data$x,
 					density_data$y,
-					window = owin(range(density_data$x), range(density_data$x)),
+					window = spatstat::owin(range(density_data$x), range(density_data$x)),
 					n = density_data$count,
 					marks = rep(1, times = sum(!duplicated(density_data[, 1:2])) )
 					)
