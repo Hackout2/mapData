@@ -13,6 +13,8 @@ Imports:
   assertthat,
   lazyeval,
   maptools,
+  marmap,
   sp,
+  spatstat,
   Hmisc
 Suggests: testthat

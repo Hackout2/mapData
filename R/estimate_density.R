@@ -28,7 +28,7 @@
 estimate_density <- function(density_data, show.density=FALSE){
 
 	# construct a ppp object for use by the density estimator
-	my.ppp <- ppp(
+	my.ppp <- spatstat::ppp(
 					density_data$x,
 					density_data$y,
 					window = owin(range(density_data$x), range(density_data$x)),
@@ -38,7 +38,7 @@ estimate_density <- function(density_data, show.density=FALSE){
 
 	# density estimator
 
-	my.density <- density(	my.ppp)
+	my.density <- spatstat::density(my.ppp)
 
 	if(show.density){
 		plot(my.density)
@@ -46,6 +46,6 @@ estimate_density <- function(density_data, show.density=FALSE){
 		}
 
 	# return as a spatial grid data frame
-	return(as.SpatialGridDataFrame.im( my.density ) )
+	return(marmap::as.SpatialGridDataFrame.im( my.density ) )
 
 }
