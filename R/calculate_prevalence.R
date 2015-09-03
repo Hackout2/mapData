@@ -1,15 +1,15 @@
-#' Title of the function
+#' Calculate prevalence of infection
 #'
-#' This is what the function does bla bla bla.
+#' A function to calculate the prevalence of infection within regions of aggregation from line-list data: add up the total number of cases in each area, divide by the population and scale as appropriate. 
 #'
 #' @import Hmisc
 #'
 #' @param data A line list-type data frame (one line per case), including a column with the region in which the case occurred
-#' @param pops A data frame containing one line per region in \code{data}, with first column for region name and second for population
-#' @param region.head A string containing the name of the column specifying the region for each case
+#' @param pops A data frame containing one line per region included in \code{data}, with first column for region name and second for population. If \code{pops} is missing, the total number of cases in each region will be calculated. 
+#' @param region.head A string containing the name of the column in \code{data} which specifies the region in which each case occurred
 #' @param conf.level Level of confidence interval required for prevalence estimates.
-#' @param scale Scaling with which to report prevalence (per head, per 100 000, etc.)
-#' @return A data frame containing total population, number of cases and prevalence by region
+#' @param scale Scaling with which to report prevalence. Default (\code{scaling=1}) is per head; \code{scaling=100000} would indicate prevalence per 100,000, etc.
+#' @return A data frame containing total population, number of cases and prevalence for each region.
 #'
 #' @export
 #'
@@ -41,8 +41,6 @@ calculate_prevalence <- function (data, pops=NULL, conf.level=0.95, region.head=
     names(prev) <- "cases"
     prev <- merge(pops, prev, by.x = "region", by.y = "row.names", all = TRUE)
     prev$cases[is.na(prev$cases)] <- 0
-
-	#print(prev)
 
     if (ci) {
         prev <- cbind(prev, scale * binconf(prev$cases, prev$population, alpha = 1 -
