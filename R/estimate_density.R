@@ -1,6 +1,6 @@
 #' Estimate density
 #'
-#' function to estimate 2d density, from data frame output by density_data
+#' Function to estimate 2d density, from data frame output by density_data
 #' Produce a 2-d estimated intensity function (cases per unit area) from an (x, y, (corrected) counts) data frame.
 #'
 #' @param density_data A data frame with columns x, y and (corrected) number of individuals, as output by the \code{density_data} function.

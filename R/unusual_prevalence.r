@@ -3,7 +3,7 @@
 #' Calculating the p-value testing whether a particular region has
 #' unusual prevalence compared to the overall mean using leave-one-out
 #' crossvalidation. This means that the overall mean is computed
-#' leaving out the data from the region being tested. if a population
+#' leaving out the data from the region being tested. If a population
 #' dataset is supplied, Fisher's exact test is used to calculate the
 #' p-value. If no population data is supplied, as null hypothesis
 #' Poisson distributed number of cases per region is assumed.
