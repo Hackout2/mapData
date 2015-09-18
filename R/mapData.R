@@ -1,6 +1,6 @@
 #' sheep_data.csv
 #'
-#' A data.frame describe the dataset here.
+#' Example dataset for the mapData package. The data contains details of farms in France affected by a 2012 outbreak of Schmallenberg virus.
 #' @docType data
 #' @keywords datasets
 #' @name sheep_data
@@ -10,7 +10,7 @@ NULL
 
 #' France shapefile
 #'
-#' A data.frame describe the dataset here.
+#' Shape file for administrative areas in France.
 #' @docType data
 #' @keywords datasets
 #' @name France
