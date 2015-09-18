@@ -1,6 +1,6 @@
-#' Title
+#' Calculate infection prevalence by stratification variables
 #'
-#' description...
+#' This function could be used to calculate the prevalence within different areas/regions of a country. Or alternatively, to calcluate prevalence by another grouping factor such as age group or sex.
 #'
 #' @param data A line list-type data frame (one line per case), including a column with the region in which the case occurred and columns with stratification variables.
 #' @param pops A data frame containing one line per region/stratification variable combination in \code{data}. The first column should give the region name, then should come the stratification variables, and finally the population size in that region and stratum. If \code{pops} is \code{NULL}, the population in each area and stratum is taken as 1, and numbers of cases (rather than prevalences) are calculated.
