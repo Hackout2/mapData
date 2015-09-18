@@ -1,6 +1,6 @@
-#' agg_summaries
+#' Summaries by group
 #'
-#' Aggregate summaries on foo
+#' \code{agg_summaries} calculates summary statistics (mean, median or quantiles) of a variable by group, where group is given by another column in the data frame. For example, we could calculate the average age in different regions of a country by using age as the the variable to describe and region as the group.
 #'
 #' @param input_df The input line incidence file
 #' @param  var Variable to aggregate

@@ -1,6 +1,6 @@
-#'  area_id function
+#'  Allocate cases to areas
 #'
-#' This is the function description
+#' Allocates the spatial location of infected cases to the area/region within which they fall, to allow later aggregation and other manipulation by area.
 #' @param points SpatialPointsDataFrame containing the line list of patients
 #' @param polygons SpatialPolygonsDataFrame containing the areas
 #' @param polygonID columnname of the SpatialPolygonsDataFrame specifying the ID of the area
