@@ -26,6 +26,7 @@ test_long <- function(x) {
 #' @param long column name of the longitude data
 #' Checks line list data for valid locations
 #' @importFrom assertthat assert_that not_empty
+#' @export
 #' @examples \dontrun{
 #' # This one below is obviously a trivial example
 #' # The iris dataset contains no spatial information but we can
