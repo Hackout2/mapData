@@ -9,14 +9,14 @@
 #' @param region.head A string containing the name of the column in \code{data} which specifies the region in which each case occurred
 #' @param conf.level Level of confidence interval required for prevalence estimates.
 #' @param scale Scaling with which to report prevalence. Default (\code{scaling=1}) is per head; \code{scaling=100000} would indicate prevalence per 100,000, etc.
-#' @return A data frame containing total population, number of cases and prevalence for each region.
+#' @return A data frame containing total population (if regional populations were specified), number of cases and prevalence (if appropriate) for each region.
 #'
 #' @export
 #'
 #' @examples
 #' my.data <- data.frame(county.id = ceiling(3*runif(10)),
 #'                      age = rlnorm(10),
-#'			sex = factor(floor(2*runif(10)), levels=c(0,1), labels=c("male", "female"))
+#'						sex = factor(floor(2*runif(10)), levels=c(0,1), labels=c("male", "female"))
 #'                      )
 #'
 #' my.populations <- data.frame(county.id = 1:3,
@@ -47,9 +47,10 @@ calculate_prevalence <- function (data, pops=NULL, conf.level=0.95, region.head=
             conf.level))
         names(prev) <- c("region", "population", "cases", "prevalence", "lower",
             "upper")
+        return(prev)
     } else {
-        prev <- cbind(prev, scale * prev$cases/prev$population)
-        names(prev) <- c("region", "population", "cases", "prevalence")
+        prev <- prev[,-2]
+        names(prev) <- c("region", "cases")
+        return(prev)
     }
-    return(prev)
 }
