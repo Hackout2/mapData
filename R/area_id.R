@@ -8,6 +8,20 @@
 #' @export
 #' @return a SpatialPolygonsDataFrame containing the inputted line list, with an additional column specifying the ID of the area per patient
 #'
+#' @examples
+#' data(France)
+#' data(sheep_data)
+#' sheep_spdf <- SpatialPointsDataFrame(
+#' 		data.frame(longitude = sheep_data$longitude, latitude = sheep_data$latitude), 
+#'		data = sheep_data,
+#'		proj4string = CRS("+proj=longlat +datum=WGS84"))
+#' # write the area id in a new column
+#' sheep_spdf <- area_id(sheep_spdf, France, 'NOM_DEPT')
+#' # compare to the departement already in the sheep_data frame
+#' # usually they agree!
+#' summary(sheep_spdf$NOM_DEPT == sheep_spdf$departement)
+#'
+
 area_id <- function(points, polygons, polygonID) {
     if (proj4string(points) == proj4string(polygons)) {
         x <- over(points, polygons)
