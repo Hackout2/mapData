@@ -30,11 +30,18 @@ Begin by calculating the number of cases at each unique location. The `density_d
 ### area_id
 It may be useful to allocate cases to geographical areas in which they occurred: countries, administrative areas, or in our case areas defined by the nearest public water supply.
 
-	area_id(snow_linelist, pump_areas, "name")
+	cases <- area_id(cases, pump_areas, "name")
+	head(cases)
 
 ### agg_summaries
+Now we know to which "pump area" each case belongs, we can calculate summary statistics on the cases by area. For example, let's look at the mean age in each area:
+
+	agg_summaries(cases@data, var = "age", group = "name", FUN = mean)
+	
+In this example, as the ages were generated randomly from a uniform distribution, the means do not vary much!
 
 ### calculate_prevalence
+Calculate the prevalence of infection within each area using the `calculate_prevalence` function:
 
 ### unusual_prevalence
 
