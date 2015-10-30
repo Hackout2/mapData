@@ -20,7 +20,7 @@ The demonstration uses data on cholera deaths collected in Soho by John Snow dur
 	data(snow_linelist)
 	data(snow_polygons)
 
-### Cases at unique locations
+### Case counts at unique locations
 Begin by calculating the number of cases at each unique location. The `density_data` function returns a data frame giving the number of cases at each location.
 
 	locations <- density_data(cases)
@@ -35,7 +35,7 @@ It may be useful to allocate cases to geographical areas in which they occurred:
 	cases <- area_id(cases, pump_areas, "name")
 	head(cases)
 
-### Summaries area
+### Summaries by area
 Now we know to which "pump area" each case belongs, we can calculate summary statistics on the cases by area. For example, let's look at the mean age in each area:
 
 	agg_summaries(cases@data, var = "age", group = "name", FUN = mean)
