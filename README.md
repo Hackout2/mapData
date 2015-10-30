@@ -12,7 +12,7 @@ To install this version of the package from GitHub:
 	devtools::install_github("Hackout2/mapData")
 
 ## Demo
-The demonstration uses data on cholera deaths collected in Soho by John Snow during the 1854 outbreak. First, load the package and the line list data and shapefiles. (Note that although the locations of deaths are Snow's, the sex and age of cases has been simulated.)
+The demonstration uses data on cholera deaths collected in Soho by John Snow during the 1854 outbreak. First, load the package and the line list data and shapefiles. (Note that although the locations of deaths are Snow's, the sex and age of cases and the area populations have been simulated.)
 
 	library(mapData)
 	data(snow_linelist)
@@ -41,9 +41,27 @@ Now we know to which "pump area" each case belongs, we can calculate summary sta
 In this example, as the ages were generated randomly from a uniform distribution, the means do not vary much!
 
 ### calculate_prevalence
-Calculate the prevalence of infection within each area using the `calculate_prevalence` function:
+Calculate the prevalence of infection within each area using the `calculate_prevalence` function.
+
+	cases@data <- merge(cases@data, pump_areas@data) # add the population sizes to the line list data
+	prev <- calculate_prevalence(cases@data, 
+		pops=pump_areas@data[,c(1,3)], 
+		region.head="pump.id")
+	print(prev)
+
+The calculated prevalence can be included as information about each pump area, and plotted on a map using the `epimap` package.
+
+	pump_areas@data <- merge(
+		pump_areas@data, 
+		data.frame(pump.id = prev$region, prev = prev$prevalence)
+		)
+		
+	choroMap(pump_areas, col.by="prev", directView="browser", alpha=0.5)
 
 ### unusual_prevalence
+From the map, the area surrounding the Broad Street pump seems to have a higher prevalence than areas near other pumps. But was it "unusually" high, or just the result of random local variation?
+
+	unusual_prevalence_region(prev, prev[,1:2], region.head="region", region.i="Broad Street")
 
 ### estimate_density
 

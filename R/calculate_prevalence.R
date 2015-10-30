@@ -37,7 +37,9 @@ calculate_prevalence <- function (data, pops=NULL, conf.level=0.95, region.head=
     if (!ci)
         pops <- data.frame(region = unique(data[, regioncol]), population = 1)
     names(pops) <- c("region", "population")
+
     prev <- as.data.frame(tapply(data[, regioncol], data[, regioncol], length))
+
     names(prev) <- "cases"
     prev <- merge(pops, prev, by.x = "region", by.y = "row.names", all = TRUE)
     prev$cases[is.na(prev$cases)] <- 0
