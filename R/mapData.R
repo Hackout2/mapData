@@ -16,3 +16,12 @@ NULL
 #' @name France
 #' @usage data(France)
 NULL 
+
+#' Cholera outbreak data
+#'
+#' Deaths from cholera collected in Soho by John Snow during the 1854 outbreak. (Sex and age of cases is simulated.)
+#' @docType data
+#' @keywords datasets
+#' @name snow_linelist
+#' @usage data(snow_linelist)
+NULL 
