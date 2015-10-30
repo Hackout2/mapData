@@ -20,7 +20,7 @@
 #' print(head( my.density.data ))
 #' }
 
-density_data <- function(points, weights=NULL){
+density_data <- function(pointspatients, weights=NULL){
 
                                         # x co-ordinates
     xs <- pointspatients@coords[which(!duplicated(paste(pointspatients@coords[,1], pointspatients@coords[,2]))),1]
