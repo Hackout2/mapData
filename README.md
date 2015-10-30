@@ -7,14 +7,16 @@
 This package provides helper functions to run summary stats in line list datasets, including geocoding missing lat/longs, invalid lat/longs. The package will also provide functionality to calculate incidence/prevalence, aggregate summaries, clusters and smoothing functions.
 
 ## Installation
-To install this version of the package from GitHub:
+Install this version of the package from GitHub. To run this tutorial you will also need to install the `epimap` package. 
 
 	devtools::install_github("Hackout2/mapData")
+	devtools::install_github("Hackout2/epimap")
 
 ## Demo
 The demonstration uses data on cholera deaths collected in Soho by John Snow during the 1854 outbreak. First, load the package and the line list data and shapefiles. (Note that although the locations of deaths are Snow's, the sex and age of cases and the area populations have been simulated.)
 
 	library(mapData)
+	library(epimap)
 	data(snow_linelist)
 	data(snow_polygons)
 
