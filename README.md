@@ -20,7 +20,7 @@ The demonstration uses data on cholera deaths collected in Soho by John Snow dur
 	data(snow_linelist)
 	data(snow_polygons)
 
-### density_data
+### Cases at unique locations
 Begin by calculating the number of cases at each unique location. The `density_data` function returns a data frame giving the number of cases at each location.
 
 	locations <- density_data(cases)
@@ -29,20 +29,20 @@ Begin by calculating the number of cases at each unique location. The `density_d
 	nrow(cases@data)  # 489 cases were reported in total
 	nrow(locations)   # ... involving 250 unique locations
 	
-### area_id
+### Allocating point cases to areas
 It may be useful to allocate cases to geographical areas in which they occurred: countries, administrative areas, or in our case areas defined by the nearest public water supply.
 
 	cases <- area_id(cases, pump_areas, "name")
 	head(cases)
 
-### agg_summaries
+### Summaries area
 Now we know to which "pump area" each case belongs, we can calculate summary statistics on the cases by area. For example, let's look at the mean age in each area:
 
 	agg_summaries(cases@data, var = "age", group = "name", FUN = mean)
 	
 In this example, as the ages were generated randomly from a uniform distribution, the means do not vary much!
 
-### calculate_prevalence
+### Prevalence by area
 Calculate the prevalence of infection within each area using the `calculate_prevalence` function.
 
 	cases@data <- merge(cases@data, pump_areas@data) # add the population sizes to the line list data
@@ -60,7 +60,7 @@ The calculated prevalence can be included as information about each pump area, a
 		
 	choroMap(pump_areas, col.by="prev", directView="browser", alpha=0.5)
 
-### unusual_prevalence
+### Unusually high or low prevalence
 From the map, the area surrounding the Broad Street pump seems to have a higher prevalence than areas near other pumps. But was it "unusually" high, or just the result of random local variation?
 
 	unusual_prevalence_region(prev, prev[,1:2], region.head="region", region.i="Broad Street")
