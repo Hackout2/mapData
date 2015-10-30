@@ -33,7 +33,7 @@ Begin by calculating the number of cases at each unique location. The `density_d
 It may be useful to allocate cases to geographical areas in which they occurred: countries, administrative areas, or in our case areas defined by the nearest public water supply.
 
 	cases <- area_id(cases, pump_areas, "name")
-	head(cases)
+	head(cases@data)
 
 ### Summaries by area
 Now we know to which "pump area" each case belongs, we can calculate summary statistics on the cases by area. For example, let's look at the mean age in each area:
@@ -63,7 +63,7 @@ The calculated prevalence can be included as information about each pump area, a
 ### Unusually high or low prevalence
 From the map, the area surrounding the Broad Street pump seems to have a higher prevalence than areas near other pumps. But was it "unusually" high, or just the result of random local variation?
 
-	unusual_prevalence_region(prev, prev[,1:2], region.head="region", region.i="Broad Street")
+	unusual_prevalence_region(cases@data, pump_areas@data[2:3], region.head="name", region.i="Broad Street")
 
 ### estimate_density
 

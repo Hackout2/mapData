@@ -1,0 +1,1488 @@
+quartz(width=2*8.27, height=2*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=2*8.27, height=2*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list("% maximum", "Copies per cell", "Copies per cell") )
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c("% maximum", "Copies per cell", "Copies per cell")) )
+quartz(width=2*8.27, height=2*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum", "Copies per cell")) )
+quartz(width=2*8.27, height=2*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum", "Copies per cell")) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=2*8.27, height=2*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")) )
+quartz(width=2*8.27, height=2*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=2*8.27, height=2*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), par.strip.text = list(lines=c(1,0)) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=0.5*8.27, height=0.5*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), par.strip.text = list(lines=c(1,0)) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), par.strip.text = list(lines=c(1,0)) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+Kb.data$label <- ifelse(Kb.data$CMT == "tryptic", Kb.data$ID, Kb.data$CMT)
+head(Kb.data)
+Kb.data$label <- NA#
+Kb.data$label[Kb.data$CMT == "tryptic"] <- Kb.data$ID#
+Kb.data$label[Kb.data$CMT == "epitope"] <- Kb.data$row
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")) strip = strip.default(factor.levels = Kb.data$label))
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), strip = strip.default(factor.levels = Kb.data$label))
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), strip = strip.custom(factor.levels = Kb.data$label))
+head(Kb.data)
+# script for reading output of simplified model, fitted by nonmem#
+#
+rm(list=ls())#
+#
+library(lattice)#
+library(latticeExtra)#
+#
+Kb.data <- read.table("/Users/joannalewis/Documents/projects/MHC-I/nonmem_simplified_supertimecourse/sdtab40", header=TRUE, skip=1)#
+Kb.names <- read.csv("/Volumes/data/mhc1/SuperTimecourse_name_key_both.csv", header=FALSE)#
+#
+Kb.data$ID <- factor(Kb.data$ID, levels=1:nrow(Kb.names), labels = Kb.names$V1)#
+Kb.data$CMT <- factor(Kb.data$CMT, levels=c(1,2), labels = c("tryptic", "epitope"))#
+#
+Kb.data$DV[Kb.data$DV == -99] <- NA#
+#
+Kb.data$max <- apply(matrix(c(Kb.data$DV, Kb.data$Y), ncol=2), 1, max, na.rm=TRUE)#
+#
+Kb.data$row <- NA#
+#
+# which row of figure should it be plotted on?#
+Kb.data$row[Kb.data$CMT == "tryptic"] <- "tryptic"#
+Kb.data$row[Kb.data$CMT != "tryptic" & Kb.data$MHC == 0] <- "Kb epitopes"#
+Kb.data$row[Kb.data$CMT != "tryptic" & Kb.data$MHC == 1] <- "Db epitopes"
+head(Kb.data)
+Kb.data$label <- NA
+head(Kb.data)
+Kb.data$label[Kb.data$CMT == "tryptic"] <- Kb.data$ID
+Kb.data$label[Kb.data$CMT == "tryptic"] <- Kb.data$ID[Kb.data$CMT == "tryptic"]#
+Kb.data$label[Kb.data$CMT == "epitope"] <- Kb.data$row[Kb.data$CMT == "epitope"]
+head(Kb.data)
+Kb.data$label <- NA
+Kb.data$label[Kb.data$CMT == "tryptic"] <- Kb.data$ID[Kb.data$CMT == "tryptic"]
+Kb.data$label <- NA
+Kb.data$label[Kb.data$CMT == "tryptic"] <- Kb.data$ID[Kb.data$CMT == "tryptic"]
+head(Kb.data)
+Kb.data$label[Kb.data$CMT == "tryptic"] <- as.character(Kb.data$ID[Kb.data$CMT == "tryptic"])
+head(Kb.data)
+Kb.data$label <- NA#
+Kb.data$label[Kb.data$CMT == "tryptic"] <- as.character(Kb.data$ID[Kb.data$CMT == "tryptic"])#
+Kb.data$label[Kb.data$CMT == "epitope"] <- Kb.data$row[Kb.data$CMT == "epitope"]
+head(Kb.data)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), strip = strip.custom(factor.levels = Kb.data$label)) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+# script for reading output of simplified model, fitted by nonmem#
+#
+rm(list=ls())#
+#
+library(lattice)#
+library(latticeExtra)#
+#
+Kb.data <- read.table("/Users/joannalewis/Documents/projects/MHC-I/nonmem_simplified_supertimecourse/sdtab40", header=TRUE, skip=1)#
+Kb.names <- read.csv("/Volumes/data/mhc1/SuperTimecourse_name_key_both.csv", header=FALSE)#
+#
+Kb.data$ID <- factor(Kb.data$ID, levels=1:nrow(Kb.names), labels = Kb.names$V1)#
+Kb.data$CMT <- factor(Kb.data$CMT, levels=c(1,2), labels = c("tryptic", "epitope"))#
+#
+Kb.data$DV[Kb.data$DV == -99] <- NA#
+#
+Kb.data$max <- apply(matrix(c(Kb.data$DV, Kb.data$Y), ncol=2), 1, max, na.rm=TRUE)#
+#
+Kb.data$row <- NA#
+#
+# which row of figure should it be plotted on?#
+Kb.data$row[Kb.data$CMT == "tryptic"] <- "tryptic"#
+Kb.data$row[Kb.data$CMT != "tryptic" & Kb.data$MHC == 0] <- "Kb epitopes"#
+Kb.data$row[Kb.data$CMT != "tryptic" & Kb.data$MHC == 1] <- "Db epitopes"#
+#
+Kb.data$label <- NA#
+Kb.data$label[Kb.data$CMT == "tryptic"] <- as.character(Kb.data$ID[Kb.data$CMT == "tryptic"])#
+Kb.data$label[Kb.data$CMT == "epitope"] <- Kb.data$row[Kb.data$CMT == "epitope"]#
+# which set of peptides does each belong to?#
+#
+set <- tapply(Kb.data$MHC, Kb.data$ID, function(x) sum(unique(x) + 1) )#
+#
+both.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 3]))#
+Db.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 2])) # Db.data <- Kb.data#
+Kb.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 1]))
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), strip = strip.custom(factor.levels = Kb.data$label)) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), strip = strip.custom(which.given=1, factor.levels = Kb.data$label)) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), strip = strip.custom(which.given=1, factor.levels = Kb.data$label), strip = strip.custom(which.given=1, factor.levels = Kb.data$label)) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+packet.panel.bycolumn <- function (layout, condlevels, page, row, column, skip) {#
+  dims <- sapply(condlevels, length)#
+  if(layout[2] != dims[2]) {#
+    stop("rows in layout must be equal to rows of second conditioning variable")#
+  }#
+  panels.per.row <- layout[1]#
+  panels.per.column <- layout[2]#
+  total.columns <- dims[1]#
+  panels.needed <- total.columns * panels.per.column#
+  panels.per.page <- layout[1] * layout[2]#
+  pages.needed <- ceiling(panels.needed / panels.per.page)#
+  empty.columns <- (panels.per.row - total.columns) %% panels.per.row#
+  panel.matrix <- rbind(matrix(1:panels.needed,ncol=panels.per.column),#
+                        matrix(NA, nrow=empty.columns, ncol=panels.per.column))#
+  panel.order <- as.vector(aperm(array(panel.matrix,#
+                                       dim=c(panels.per.row, pages.needed, panels.per.column)),#
+                                 c(1,3,2)))#
+  packet.order <- do.call(expand.grid, condlevels)[panel.order,]#
+  panel.number <- 1 + (page - 1) * panels.per.page + (row - 1) * panels.per.row + (column - 1)#
+  out <- as.numeric(packet.order[panel.number, ])#
+  if (any(is.na(out))) out <- NULL#
+  out#
+}#
+#
+p <- xyplot(y~x|f1+f2, data=d, cex=0.5, pch=16)#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(5,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+source("/Users/joannalewis/Desktop/lattice_test.R")
+head(d)
+p <- xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")))
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(5,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum"))) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides#
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum"))) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(5,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides#
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum"))) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(3,6))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides#
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum"))) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(5,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides#
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum"))) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides#
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum"))) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3), panel.custom=list(cex=0.8))#
+plot(p, packet.panel=packet.panel.bycolumn)
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), cex=0.8) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3), panel.custom=list(cex=0.8))#
+plot(p, packet.panel=packet.panel.bycolumn)
+p <- xyplot(y~x|f1+f2, data=d, cex=0.5, pch=16)#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3), panel.custom=list(cex=0.8))#
+plot(p, packet.panel=packet.panel.bycolumn)
+p <- xyplot(y~x|f1+f2, data=d, cex=0.5, pch=16, panel.custom=list(cex=0.8))#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+p <- xyplot(y~x|f1+f2, data=d, cex=0.5, pch=16, panel.custom=list(cex=0.1))#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+p <- xyplot(y~x|f1+f2, data=d, cex=0.5, pch=16, strip.custom=list(cex=0.1))#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+p <- xyplot(y~x|f1+f2, data=d, cex=0.5, pch=16, par.strip.text=list(cex=0.1))#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides#
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8)) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+######################################
+# same plots, different paper size#
+######################################
+#
+packet.panel.bycolumn <- function (layout, condlevels, page, row, column, skip) {#
+  dims <- sapply(condlevels, length)#
+  if(layout[2] != dims[2]) {#
+    stop("rows in layout must be equal to rows of second conditioning variable")#
+  }#
+  panels.per.row <- layout[1]#
+  panels.per.column <- layout[2]#
+  total.columns <- dims[1]#
+  panels.needed <- total.columns * panels.per.column#
+  panels.per.page <- layout[1] * layout[2]#
+  pages.needed <- ceiling(panels.needed / panels.per.page)#
+  empty.columns <- (panels.per.row - total.columns) %% panels.per.row#
+  panel.matrix <- rbind(matrix(1:panels.needed,ncol=panels.per.column),#
+                        matrix(NA, nrow=empty.columns, ncol=panels.per.column))#
+  panel.order <- as.vector(aperm(array(panel.matrix,#
+                                       dim=c(panels.per.row, pages.needed, panels.per.column)),#
+                                 c(1,3,2)))#
+  packet.order <- do.call(expand.grid, condlevels)[panel.order,]#
+  panel.number <- 1 + (page - 1) * panels.per.page + (row - 1) * panels.per.row + (column - 1)#
+  out <- as.numeric(packet.order[panel.number, ])#
+  if (any(is.na(out))) out <- NULL#
+  out#
+}
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides#
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8)) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+source("/Users/joannalewis/Documents/projects/MHC-I/nonmem_simplified/plot_supertimecourse_fits_bothmhc.R")
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+xyplot(max~TIME|ID+row, data=Db.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+quartz(width=8.27, height=5.83)
+xyplot(max~TIME|ID+row, data=Db.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)
+plot(p)
+p <- update(p, layout=c(6,2))
+plot(p)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)
+plot(p, packet.panel=packet.panel.bycolumn)
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6]], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" )
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" )
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="" ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=0.5*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=0.75*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=0.75*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Db.data[Db.data$ID %in% (unique(Db.data$ID))[13:14],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=0.75*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=8.27, height=5.83)#
+#
+# if there were multiple epitopes from some peptides#
+p <-	#
+xyplot(max~TIME|ID+row, data=both.data, groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "Copies per cell", "% maximum")), par.strip.text=list(cex=0.8)) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=both.data, groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=both.data, groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,3))#
+plot(p, packet.panel=packet.panel.bycolumn)
+source("/Users/joannalewis/Documents/projects/MHC-I/plot_ns.R")
+# script for reading output of simplified model, fitted by nonmem#
+#
+rm(list=ls())#
+#
+library(lattice)#
+library(latticeExtra)#
+#
+Kb.data <- read.table("/Users/joannalewis/Documents/projects/MHC-I/nonmem_simplified_supertimecourse/sdtab38", header=TRUE, skip=1)#
+Kb.names <- read.csv("/Volumes/data/mhc1/SuperTimecourse_name_key_both.csv", header=FALSE)#
+#
+Kb.data$ID <- factor(Kb.data$ID, levels=1:nrow(Kb.names), labels = Kb.names$V1)#
+Kb.data$CMT <- factor(Kb.data$CMT, levels=c(1,2), labels = c("tryptic", "epitope"))#
+#
+Kb.data$DV[Kb.data$DV == -99] <- NA#
+#
+Kb.data$max <- apply(matrix(c(Kb.data$DV, Kb.data$Y), ncol=2), 1, max, na.rm=TRUE)#
+#
+Kb.data$row <- NA#
+#
+# which row of figure should it be plotted on?#
+Kb.data$row[Kb.data$CMT == "tryptic"] <- "tryptic"#
+Kb.data$row[Kb.data$CMT != "tryptic" & Kb.data$MHC == 0] <- "Kb epitopes"#
+Kb.data$row[Kb.data$CMT != "tryptic" & Kb.data$MHC == 1] <- "Db epitopes"#
+#
+Kb.data$label <- NA#
+Kb.data$label[Kb.data$CMT == "tryptic"] <- as.character(Kb.data$ID[Kb.data$CMT == "tryptic"])#
+Kb.data$label[Kb.data$CMT == "epitope"] <- Kb.data$row[Kb.data$CMT == "epitope"]#
+# which set of peptides does each belong to?#
+#
+set <- tapply(Kb.data$MHC, Kb.data$ID, function(x) sum(unique(x) + 1) )#
+#
+both.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 3]))#
+Db.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 2])) # Db.data <- Kb.data#
+Kb.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 1]))
+# Kb#
+#
+quartz(width=8.27, height=0.75*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+######################################
+# same plots, different paper size#
+######################################
+#
+packet.panel.bycolumn <- function (layout, condlevels, page, row, column, skip) {#
+  dims <- sapply(condlevels, length)#
+  if(layout[2] != dims[2]) {#
+    stop("rows in layout must be equal to rows of second conditioning variable")#
+  }#
+  panels.per.row <- layout[1]#
+  panels.per.column <- layout[2]#
+  total.columns <- dims[1]#
+  panels.needed <- total.columns * panels.per.column#
+  panels.per.page <- layout[1] * layout[2]#
+  pages.needed <- ceiling(panels.needed / panels.per.page)#
+  empty.columns <- (panels.per.row - total.columns) %% panels.per.row#
+  panel.matrix <- rbind(matrix(1:panels.needed,ncol=panels.per.column),#
+                        matrix(NA, nrow=empty.columns, ncol=panels.per.column))#
+  panel.order <- as.vector(aperm(array(panel.matrix,#
+                                       dim=c(panels.per.row, pages.needed, panels.per.column)),#
+                                 c(1,3,2)))#
+  packet.order <- do.call(expand.grid, condlevels)[panel.order,]#
+  panel.number <- 1 + (page - 1) * panels.per.page + (row - 1) * panels.per.row + (column - 1)#
+  out <- as.numeric(packet.order[panel.number, ])#
+  if (any(is.na(out))) out <- NULL#
+  out#
+}
+# Kb#
+#
+quartz(width=8.27, height=0.75*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+# script for reading output of simplified model, fitted by nonmem#
+#
+rm(list=ls())#
+#
+library(lattice)#
+library(latticeExtra)#
+#
+Kb.data <- read.table("/Users/joannalewis/Documents/projects/MHC-I/nonmem_simplified_supertimecourse/sdtab38", header=TRUE, skip=1)#
+Kb.names <- read.csv("/Volumes/data/mhc1/SuperTimecourse_name_key_both.csv", header=FALSE)#
+#
+Kb.data$ID <- factor(Kb.data$ID, levels=1:nrow(Kb.names), labels = Kb.names$V1)#
+Kb.data$CMT <- factor(Kb.data$CMT, levels=c(1,2), labels = c("tryptic", "epitope"))#
+#
+Kb.data$DV[Kb.data$DV == -99] <- NA#
+#
+Kb.data$max <- apply(matrix(c(Kb.data$DV, Kb.data$Y), ncol=2), 1, max, na.rm=TRUE)#
+#
+Kb.data$row <- NA#
+#
+# which row of figure should it be plotted on?#
+Kb.data$row[Kb.data$CMT == "tryptic"] <- "tryptic"#
+Kb.data$row[Kb.data$CMT != "tryptic" & Kb.data$MHC == 0] <- "Kb epitopes"#
+Kb.data$row[Kb.data$CMT != "tryptic" & Kb.data$MHC == 1] <- "Db epitopes"#
+#
+Kb.data$label <- NA#
+Kb.data$label[Kb.data$CMT == "tryptic"] <- as.character(Kb.data$ID[Kb.data$CMT == "tryptic"])#
+Kb.data$label[Kb.data$CMT == "epitope"] <- Kb.data$row[Kb.data$CMT == "epitope"]#
+# which set of peptides does each belong to?#
+#
+set <- tapply(Kb.data$MHC, Kb.data$ID, function(x) sum(unique(x) + 1) )#
+#
+both.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 3]))#
+Db.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 2])) # Db.data <- Kb.data#
+Kb.data <- subset(Kb.data, Kb.data$ID %in% names(set[set == 1]))
+######################################
+# same plots, different paper size#
+######################################
+#
+packet.panel.bycolumn <- function (layout, condlevels, page, row, column, skip) {#
+  dims <- sapply(condlevels, length)#
+  if(layout[2] != dims[2]) {#
+    stop("rows in layout must be equal to rows of second conditioning variable")#
+  }#
+  panels.per.row <- layout[1]#
+  panels.per.column <- layout[2]#
+  total.columns <- dims[1]#
+  panels.needed <- total.columns * panels.per.column#
+  panels.per.page <- layout[1] * layout[2]#
+  pages.needed <- ceiling(panels.needed / panels.per.page)#
+  empty.columns <- (panels.per.row - total.columns) %% panels.per.row#
+  panel.matrix <- rbind(matrix(1:panels.needed,ncol=panels.per.column),#
+                        matrix(NA, nrow=empty.columns, ncol=panels.per.column))#
+  panel.order <- as.vector(aperm(array(panel.matrix,#
+                                       dim=c(panels.per.row, pages.needed, panels.per.column)),#
+                                 c(1,3,2)))#
+  packet.order <- do.call(expand.grid, condlevels)[panel.order,]#
+  panel.number <- 1 + (page - 1) * panels.per.page + (row - 1) * panels.per.row + (column - 1)#
+  out <- as.numeric(packet.order[panel.number, ])#
+  if (any(is.na(out))) out <- NULL#
+  out#
+}#
+#
+# Kb#
+#
+quartz(width=8.27, height=0.75*5.83)#
+#
+# if there were multiple epitopes from some peptides	#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[1:6],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[7:12],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)#
+#
+p <-#
+xyplot(max~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, subscripts=TRUE, scales=list(y="free"), pch="", xlab="Time since infection (hours)", ylab=list(c( "Copies per cell", "% maximum")), par.strip.text=list(cex=0.7) ) +#
+	as.layer(xyplot(Y~TIME|ID+row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, type="l", col=2, subscripts=TRUE ) ) +#
+	as.layer(xyplot( DV ~ TIME | ID + row, data=Kb.data[Kb.data$ID %in% (unique(Kb.data$ID))[13:18],], groups=OCC, col= "deepskyblue", subscripts=TRUE))	#
+p <- useOuterStrips(p)#
+p <- update(p, layout=c(6,2))#
+plot(p, packet.panel=packet.panel.bycolumn)
+source("/Users/joannalewis/Documents/projects/MHC-I/plot_ns.R")
+plot(patab$NP, patab$X..position.epitope.start)
+plot(patab$NT, patab$X..position.epitope.start)
+plot(patab$NP - patab$NT, patab$X..position.epitope.start)
+head(patab)
+plot(patab$NP, patab$Length..amino.acids)
+plot(patab$NT, patab$Length..amino.acids)
+plot(patab$NP - patab$NT, patab$Length..amino.acids)
+source("/Users/joannalewis/Documents/projects/M_Genitalium/Natsal-2 data/simulate_natsal2.R")
+source("/Users/joannalewis/Documents/projects/M_Genitalium/Natsal-2 data/read_natsal2.R")
+library(nlme)
+# fit model to individuals in natsal2#
+#
+rm(list=ls())#
+#
+library(foreign)#
+library(deSolve)#
+#
+natsal2 <- read.dta("~/Documents/projects/M_Genitalium/Natsal-2 data/stata11/natsal_2000_for_archive.dta")
+# fit model to individuals in natsal2#
+#
+rm(list=ls())#
+#
+library(foreign)#
+library(deSolve)#
+#
+natsal2 <- read.dta("~/Documents/projects/M_Genitalium/Natsal-2 data/stata11/natsal_2000_for_archive.dta")#
+#
+# no. people in compartments 0:n, at given times#
+#
+myfun <- function(t, y, parms){#
+	rho   <- parms[1]#
+	sigma <- parms[2]#
+	n <- parms[3]#
+	mat <- matrix(  c(rep( c(#
+  					-rho, rho, rep(0, times = 2*n),#
+ 					-sigma, sigma, rep(0, times = 2*n)#
+ 					), times = n),#
+ 					-rho),#
+					ncol = 2*n + 1#
+					)#
+	# print(mat)#
+	# print(y)#
+	list(#
+		dy = mat%*%y#
+		)#
+}#
+#
+Xode <- function(rho, sigma, n, time){#
+	#out <- matrix(0, nrow=n+1, ncol=length(time) )#
+	X0 <- sigma / (rho + sigma)    # no. singles at time = 0#
+	P1 <- rho / (rho + sigma)	   # no. people in couples (= 2*no. couples) at time = 0#
+	sol <- lsoda(#
+					c(X0, P1, rep(0, times=2*n - 1)),#
+					c(0,time),#
+					myfun,#
+					c(rho, sigma, n)#
+					)#
+#
+	out <- sol[-1, 2]#
+# print(sol)#
+# print(out)#
+	for(i in 1:n)#
+		out <- cbind(out, sol[-1,2*i+1] + sol[-1,2*i + 2])#
+#
+	return(as.vector(t(out)))#
+}
+head(natsal2[1,])
+head(natsal2,n=1)
+fitframe <- data.frame(#
+						4wk = factor(natsal2$no4wks),#
+						3mnth = factor(natsal2$het3mnt),#
+						1yr = factor(natsal2$het1yr),#
+						5yr = factor(natsal2$het5yrs)#
+						)
+fitframe <- data.frame(
+4wk = factor(natsal2$no4wks),
+fitframe <- data.frame(4wk = factor(natsal2$no4wks),#
+						3mnth = factor(natsal2$het3mnt),#
+						1yr = factor(natsal2$het1yr),#
+						5yr = factor(natsal2$het5yrs)#
+						)
+fitframe <- data.frame(4wk = factor(natsal2$no4wks),
+fitframe <- data.frame(#
+						n4wk = factor(natsal2$no4wks),#
+						n3mnth = factor(natsal2$het3mnt),#
+						n1yr = factor(natsal2$het1yr),#
+						n5yr = factor(natsal2$het5yrs)#
+						)
+head(fitframe)
+source("/Users/joannalewis/Documents/projects/M_Genitalium/Natsal-2 data/read_natsal2.R")
+fitframe
+source("/Users/joannalewis/Documents/projects/M_Genitalium/Natsal-2 data/read_natsal2.R")
+head(fitframe)
+head(fitframe, n=20)
+head(fitframe, n=100)
+# fit model to individuals in natsal2#
+#
+rm(list=ls())#
+#
+library(foreign)#
+library(deSolve)#
+#
+natsal2 <- read.dta("~/Documents/projects/M_Genitalium/Natsal-2 data/stata11/natsal_2000_for_archive.dta")#
+#
+fitframe <- data.frame(#
+						n4wk = factor(natsal2$no4wks),#
+						n3mnth = factor(natsal2$het3mnt),#
+						n1yr = factor(natsal2$het1yr),#
+						n5yr = factor(natsal2$het5yrs)#
+						)
+head(fitframe)
+fitframe[n>10] <- NA
+fitframe[fitframe>10] <- NA
+fitframe <- data.frame(#
+						n4wk = natsal2$no4wks,#
+						n3mnth = natsal2$het3mnt,#
+						n1yr = natsal2$het1yr,#
+						n5yr = natsal2$het5yrs#
+						)#
+fitframe[fitframe>10] <- NA
+head(fitframe)
+head(fitframe,n=20)
+as.numeric(fitframe[1,] == 0:10)
+ode.model <- nls(#
+					prop ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+					data = as.numeric(fitframe[1,] == 0:10),#
+					start = list(rho=0.0089790, sigma=0.0039512)#
+					)
+as.numeric(fitframe[1,] == 0:10)
+ode.model <- nls(#
+					y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+					data = data.frame(y=as.numeric(fitframe[1,] == 0:10) ),#
+					start = list(rho=0.0089790, sigma=0.0039512)#
+					)
+source("/Users/joannalewis/Documents/projects/M_Genitalium/Natsal-2 data/natsal2_ind_fit.R")
+ode.model
+ode.model <- nls(#
+					y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+					data = data.frame(y=as.numeric(fitframe[1,] == 0:10) ),#
+					start = list(rho=0.0089790, sigma=0.0039512),#
+					lower=c(0,0)#
+					)
+ode.model <- nls(#
+					y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+					data = data.frame(y=as.numeric(fitframe[1,] == 0:10) ),#
+					start = list(rho=0.0089790, sigma=0.0039512),#
+					algorithm="port",#
+					lower=c(0,0)#
+					)
+ode.model <- nls(#
+					y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+					data = data.frame(y=as.numeric(fitframe[2,] == 0:10) ),#
+					start = list(rho=0.0089790, sigma=0.0039512),#
+					algorithm="port",#
+					lower=c(0,0)#
+					)
+ode.model
+head(fitframe)
+ode.model <- nls(#
+					y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+					data = data.frame(y=as.numeric(fitframe[2,] == 0:10) ),#
+					start = list(rho=0.04774, sigma=0.05666 ),#
+					algorithm="port",#
+					lower=c(0,0)#
+					)
+ode.model <- nls(#
+					y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+					data = data.frame(y=as.numeric(fitframe[1,] == 0:10) ),#
+					start = list(rho=0.04774, sigma=0.05666 ),#
+					algorithm="port",#
+					lower=c(0,0)#
+					)
+ode.model
+ode.model <- nls(#
+					y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+					data = data.frame(y=as.numeric(fitframe[3,] == 0:10) ),#
+					start = list(rho=0.04774, sigma=0.05666 ),#
+					algorithm="port",#
+					lower=c(0,0)#
+					)
+ode.model
+coef(ode.model)
+parms <- NULL#
+#
+for(i in 1:nrow(fitframe)) {#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.04774, sigma=0.05666 ),#
+						algorithm="port",#
+						lower=c(0,0)#
+						)#
+	parms <- rbind(parms, coef(ode.model) )#
+						}
+head(parms)
+head(fitframe)
+parms <- NULL#
+#
+for(i in 1:nrow(fitframe)) {#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 ),#
+						algorithm="port",#
+						lower=c(0,0)#
+						)#
+	parms <- rbind(parms, coef(ode.model) )#
+						}
+head(parms)
+nrow(parms)
+parms <- NULL#
+#
+for(i in 1:nrow(fitframe)) {#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 )#
+						# algorithm="port",#
+						# lower=c(0,0)#
+						)#
+	parms <- rbind(parms, coef(ode.model) )#
+						}
+nrow(parms)
+parms
+parms <- matrix(NA, nrow=nrow(fitframe), ncol=2)#
+#
+for(i in 1:nrow(fitframe)) {#
+	try(#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 )#
+						# algorithm="port",#
+						# lower=c(0,0)#
+						)#
+	parms[i,] <- coef(ode.model)#
+	)#
+						}
+parms <- matrix(NA, nrow=nrow(fitframe), ncol=2)#
+#
+for(i in 1:nrow(fitframe)) {#
+	try({#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 )#
+						# algorithm="port",#
+						# lower=c(0,0)#
+						)#
+	parms[i,] <- coef(ode.model)#
+	})#
+						}
+parms <- matrix(NA, nrow=nrow(fitframe), ncol=2)#
+#
+for(i in 1:10) {#
+	try({#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 )#
+						# algorithm="port",#
+						# lower=c(0,0)#
+						)#
+	parms[i,] <- coef(ode.model)#
+	})#
+						}
+parms
+parms[1:10,]
+plot(parms[,1], parms[,2])
+parms <- matrix(NA, nrow=nrow(fitframe), ncol=2)#
+#
+for(i in 1:100) {#
+	if(i %% 100 == 0) print(i)#
+	try({#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 )#
+						# algorithm="port",#
+						# lower=c(0,0)#
+						)#
+	parms[i,] <- coef(ode.model)#
+	})#
+						}
+parms <- matrix(NA, nrow=nrow(fitframe), ncol=2)#
+#
+for(i in 1:100) {#
+	if(i %% 10 == 0) print(i)#
+	try({#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 )#
+						# algorithm="port",#
+						# lower=c(0,0)#
+						)#
+	parms[i,] <- coef(ode.model)#
+	})#
+						}
+parms
+parms[1:100,]
+plot(parms[,1], parms[,2])
+hist(parms[,1])
+hist(parms[,2])
+parms <- matrix(NA, nrow=nrow(fitframe), ncol=2)#
+#
+for(i in 1:500) {#
+	if(i %% 10 == 0) print(i)#
+	try({#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 )#
+						# algorithm="port",#
+						# lower=c(0,0)#
+						)#
+	parms[i,] <- coef(ode.model)#
+	})#
+						}
+plot(parms[,1], parms[,2])
+head(parms)
+coef(ode.model)
+plot(parms[,1], parms[,2], xlab="Rate of partnership formation, rho", ylab="Rate of partnerships dissolving, sigma")
+nrow(fitframe)
+parms <- matrix(NA, nrow=nrow(fitframe), ncol=2)#
+#
+for(i in 1:nrow(fitframe)) {#
+	if(i %% 10 == 0) print(i)#
+	try({#
+	ode.model <- nls(#
+						y ~ Xode(rho, sigma, 10, c(4, 365.25/(7*12), 365.25/7, 5*365.25/7)),#
+						data = data.frame(y=as.numeric(fitframe[i,] == 0:10) ),#
+						start = list(rho=0.05, sigma=0.05 )#
+						# algorithm="port",#
+						# lower=c(0,0)#
+						)#
+	parms[i,] <- coef(ode.model)#
+	})#
+						}
+head(parms)
+plot(parms[,1], parms[,2], xlab="Rate of partnership formation, rho", ylab="Rate of partnerships dissolving, sigma")
+table(parms[,1])
+table(parms[,2])
+write.csv(parms,"ind.fit.parms.csv")
+write.csv(parms,"ind.fit.parms.csv", row.names=FALSE)
+mean(c(8,6,12))
+550 - 15.38
+library(devtools)
+install_github("ntncmch/SSMinR")
+library(devtools)
+install_github("ntncmch/SSMinR")
+library(help=SSMinR)
+library(SSMinR)
+library(epitools)
+library(EpiTools)
+library(OutbreakTools)
+has_devel()
+library(devtools)
+has_devel()
+create(test_pkg)
+create("test_pkg")
+create("test.pkg")
+create("testpkg")
+outbreaktools
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope) ~#
+		rep(data.1.transit$t, times=2) |#
+		rep(c("peptide", "epitope"), each=nrow(data.1.transit)),#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(1,2),#
+		strip = FALSE,#
+		strip.left = TRUE )
+rm(list=ls())#
+#
+library(deSolve)#
+library(lattice)#
+library(latticeExtra)#
+#
+transit_function <- function(t, parms){#
+	# parms = c(A, n, ktr)#
+	        parms[1] * (parms[3]*t)^parms[2] * exp(-parms[3]*t) / #
+	        	( factorial(parms[2]) )#
+				}#
+epitope_deriv_function <- function(t, y, parms){#
+	# parms = c(A, n, ktr, ui)#
+#
+			return(list(#
+				sol = transit_function(t, parms[1:3]) - parms[4]*y#
+				))#
+				}#
+#
+# function which solves ODEs for the simplified model, given parameter values, and returns solutions at times time#
+simplified_model <- function(parms, time){#
+		out <- rep(NA, times=length(time))#
+#		tryp <- transit_function(time, parms)#
+		out <- (lsoda(#
+						0,			# initial condition#
+						time,       # times for solution (first element must be zero)#
+						epitope_deriv_function,#
+						parms#
+						))[,2]#
+				return(out)#
+	}#
+#
+packet.panel.bycolumn <- function (layout, condlevels, page, row, column, skip) {#
+  dims <- sapply(condlevels, length)#
+  if(layout[2] != dims[2]) {#
+    stop("rows in layout must be equal to rows of second conditioning variable")#
+  }#
+  panels.per.row <- layout[1]#
+  panels.per.column <- layout[2]#
+  total.columns <- dims[1]#
+  panels.needed <- total.columns * panels.per.column#
+  panels.per.page <- layout[1] * layout[2]#
+  pages.needed <- ceiling(panels.needed / panels.per.page)#
+  empty.columns <- (panels.per.row - total.columns) %% panels.per.row#
+  panel.matrix <- rbind(matrix(1:panels.needed,ncol=panels.per.column),#
+                        matrix(NA, nrow=empty.columns, ncol=panels.per.column))#
+  panel.order <- as.vector(aperm(array(panel.matrix,#
+                                       dim=c(panels.per.row, pages.needed, panels.per.column)),#
+                                 c(1,3,2)))#
+  packet.order <- do.call(expand.grid, condlevels)[panel.order,]#
+  panel.number <- 1 + (page - 1) * panels.per.page + (row - 1) * panels.per.row + (column - 1)#
+  out <- as.numeric(packet.order[panel.number, ])#
+  if (any(is.na(out))) out <- NULL#
+  out#
+}#
+#
+######################################
+# first figure: simulations with different peptide profiles#
+######################################
+#
+n <- 4#
+sca <- 1#
+ktr <- 2#
+ui <- 1#
+#
+data.1.transit <- data.frame(#
+						t = seq(0, 8, 0.1)#
+						)#
+#
+data.1.transit$peptide <- transit_function(data.1.transit$t, c(sca, n, ktr))#
+data.1.transit$peptide <- 100 * data.1.transit$peptide / max(data.1.transit$peptide)#
+#
+data.1.transit$epitope <- simplified_model(c(sca, n, ktr, ui), data.1.transit$t)#
+data.1.transit$epitope <- 100 * data.1.transit$epitope / max(data.1.transit$epitope)#
+#
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope) ~#
+		rep(data.1.transit$t, times=2) |#
+		rep(c("peptide", "epitope"), each=nrow(data.1.transit)),#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(1,2),#
+		strip = FALSE,#
+		strip.left = TRUE ) #
+#
+data.1.step <- data.frame(#
+						t = seq(0, 8, 0.1)#
+						)
+data.1.transit$step <- 100*!(t > 2)
+data.1.step$peptide <- 100*!(t > 2)
+data.1.step$peptide <- 100*!(data.1.step$t > 2)
+lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) 100*!(data.1.step$t > 2),#
+								NULL)
+lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(100*!(data.1.step$t > 2)),#
+								NULL)
+lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(100*!(t > 2)),#
+								NULL)
+data.1.step$peptide <- 100*(data.1.step$t > 2)#
+data.1.step$peptide <- lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(100*(t > 2) - parms*y), # only parameter is ui#
+								1)
+head(data.1.step)
+data.1.step$peptide <- 100*(data.1.step$t > 2)#
+data.1.step$peptide <- (lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(100*(t > 2) - parms*y), # only parameter is ui#
+								1))$1
+data.1.step$peptide <- 100*(data.1.step$t > 2)#
+data.1.step$peptide <- (lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(100*(t > 2) - parms*y), # only parameter is ui#
+								1))
+(lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(100*(t > 2) - parms*y), # only parameter is ui#
+								1))$1
+(lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(100*(t > 2) - parms*y), # only parameter is ui#
+								1))[[1]]
+(lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(100*(t > 2) - parms*y), # only parameter is ui#
+								1))
+data.1.step <- data.frame(#
+						t = seq(0, 8, 0.1)#
+						)#
+#
+data.1.step$peptide <- 100*(data.1.step$t > 2)#
+data.1.step$peptide <- (lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(sol = 100*(t > 2) - parms*y), # only parameter is ui#
+								1))$sol
+lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(sol = 100*(t > 2) - parms*y), # only parameter is ui#
+								1)
+data.1.step$peptide <- 100*(data.1.step$t > 2)#
+data.1.step$peptide <- (lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(sol = 100*(t > 2 & t < 4) - parms*y), # only parameter is ui#
+								1))[,2]
+head(data.1.step)
+data.1.step$epitope <- (lsoda(
+data.1.step$peptide <- 100*(data.1.step$t > 2)#
+data.1.step$epitope <- (lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(sol = 100*(t > 2 & t < 4) - parms*y), # only parameter is ui#
+								1))[,2]#
+data.1.step$epitope <- 100 * data.1.step$epitope / max(data.1.step$epitope)
+data.1.step$epitope <- (lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(sol = 100*((t > 2) & (t < 4)) - parms*y), # only parameter is ui#
+								1))[,2]
+data.1.step$epitope <- 100 * data.1.step$epitope / max(data.1.step$epitope)
+head(data.1.step)
+data.1.step <- data.frame(#
+						t = seq(0, 8, 0.1)#
+						)#
+#
+data.1.step$peptide <- 100*((data.1.step$t > 2) & (data.1.step$t < 4))#
+data.1.step$epitope <- (lsoda(#
+								0,#
+								data.1.step$t,#
+								function(t, y, parms) list(sol = 100*((t > 2) & (t < 4)) - parms*y), # only parameter is ui#
+								1))[,2]#
+data.1.step$epitope <- 100 * data.1.step$epitope / max(data.1.step$epitope)
+xyplot(c(data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=2) |#
+		rep(c("peptide", "epitope"), each=nrow(data.1.step)),#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(1,2),#
+		strip = FALSE,#
+		strip.left = TRUE )
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)) + #
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) ,#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = FALSE,#
+		strip.left = TRUE )
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)) + #
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) ,#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=c(0,0.7)),#
+		layout = c(2,2),#
+		strip = FALSE,#
+		strip.left = TRUE )
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)) + #
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) ,#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = FALSE,#
+		strip.left = TRUE )
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)) + #
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) ,#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = FALSE,#
+		strip.left = c(TRUE, FALSE) )
+p <- xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)) + #
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) ,#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = FALSE,#
+		strip.left = c(TRUE, FALSE) )
+plot(p, packet.panel=packet.panel.bycolumn)
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) +#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)),#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = FALSE,#
+		strip.left = c(TRUE, FALSE) )
+quartz(width=7, height=4)											#
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) +#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)),#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = FALSE,#
+		strip.left = c(TRUE, FALSE) )
+quartz(width=7, height=4)											#
+xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) +#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)),#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = TRUE,#
+		strip.left = TRUE )
+p <- xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) +#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)),#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = TRUE,#
+		strip.left = TRUE )
+p <- UseOuterStrips(p)
+plot(p, packet.panel=packet.panel.bycolumn)
+library(latticeExtra)
+plot(p, packet.panel=packet.panel.bycolumn)
+p <- UseOuterStrips(p)
+p <- useOuterStrips(p)
+plot(p, packet.panel=packet.panel.bycolumn)
+quartz(width=7, height=4)											#
+p <- xyplot(c(data.1.transit$peptide, data.1.transit$epitope, data.1.step$peptide, data.1.step$epitope) ~#
+		rep(data.1.step$t, times=4) |#
+		rep(c("compartment", "step"), each= 2*nrow(data.1.step)) +#
+		rep(c("peptide", "epitope"), times = 2, each=nrow(data.1.step)),#
+		type="l", #
+		scales=list(y="free"), #
+		xlab="Time since infection (hours)", #
+		ylab=list(c( "% maximum", "% maximum")), #
+		par.strip.text=list(cex=0.7),#
+		layout = c(2,2),#
+		strip = TRUE,#
+		strip.left = TRUE ) #
+#
+p <- useOuterStrips(p)#
+plot(p, packet.panel=packet.panel.bycolumn)
+source("/Users/joannalewis/Documents/projects/MHC-I/paper/simulation_figures.R")
+devtools::document()
+library(lubridate)
+devtools::document()
+devtools::document()

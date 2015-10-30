@@ -8,7 +8,7 @@
 #' p-value. If no population data is supplied, as null hypothesis
 #' Poisson distributed number of cases per region is assumed.
 #'
-#' @param data a dataframe containing the number of cases and total population for all regions in the dataset.
+#' @param data a line list-type dataframe containing a line for each case, with its region and the regional population.
 #' @param pops dataframe containing the region ID in the first and the population size for each region in the dataset in the second column.
 #' @param region.head variable name of the incidence column in data.
 #' @param region.i ID of the region being tested.
