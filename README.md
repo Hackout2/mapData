@@ -64,6 +64,12 @@ The calculated prevalence can be included as information about each pump area, a
 From the map, the area surrounding the Broad Street pump seems to have a higher prevalence than areas near other pumps. But was it "unusually" high, or just the result of random local variation?
 
 	unusual_prevalence_region(cases@data, pump_areas@data[2:3], region.head="name", region.i="Broad Street")
+	
+The small p-value strongly suggests something different about this area. We can do the same for every region using a single command as follows:
+
+	calculate_prevalence_unusual_pval(cases@data, pump_areas@data[2:3], region.head="name")
+	
+Here we see that there are only two regions which are _not_ found to have unusually high or low prevalence, as judged by large p-vales: Briddle Street and South Soho. Based on p-values, Broad Street and Crown Chapel might be classified as having high prevalence (+1 appears in the "sign" column of the output) while Coventry Street, Dean Street, Great Malborough Street and Warwick would all be classed as unusually low-prevalence (-1 in the "sign" column) compared to the area as a whole.
 
 ### estimate_density
 
