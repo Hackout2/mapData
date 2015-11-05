@@ -6,7 +6,7 @@ Description: A set of helper functions to manipulate outbreak data in preparatio
 Depends: R (>= 3.1.1)
 License: CC0
 LazyData: true
-Imports:
+Imports: 
   dplyr,
   ggmap,
   lubridate,
@@ -16,4 +16,6 @@ Imports:
   sp,
   spatstat,
   Hmisc
-Suggests: testthat
+Suggests: testthat,
+    knitr
+VignetteBuilder: knitr
