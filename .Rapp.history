@@ -1,3 +1,4 @@
+cholera$deaths@coords$coords.x1
 cholera$deaths@coords[,"coords.x1"]
 mapply(rep, cholera$deaths@coords[,"coords.x1"], times = cholera$deaths@data$Count)
 unlist(mapply(rep, cholera$deaths@coords[,"coords.x1"], times = cholera$deaths@data$Count))
@@ -637,28 +638,18 @@ lines(timedata$time, predict(fit1))#
 lines(timedata$time, predict(fit2), lty=2)
 source("/Users/Joanna/Documents/ct_trends/model_complexity/example/data_from_mstic.R")
 summary(fit1)
-# This script extracts some relevant quantities for the ipython notebook example.ipynb#
-# from the Natsal-3 dataset.#
-#
-rm(list=ls())#
-#
-library(foreign)#
-library(questionr)#
-library(survey)#
-#
-natsal3 <- read.dta("~/Documents/data/natsal-3/UKDA-7799-stata11/stata11/eul_natsal_2010_for_archive.dta") # 15162 rows
-table(natsal3$gor, natsal3$agrp)
-table(natsal3$gor, natsal3$agrp2)
-3000/48387
-30000/48387
-40000/48387
-40000/88101
-60000/88101
-library(devtools)
-install()
-?install
-library(mapData)
-vignette(mapData)
-vignette("mapData")
-vignette(package="mapData")
+devtools::install_github("hackout2/mapData")
 vignette("mapData_vignette")
+library(mapData)
+vignette("mapData_vignette")
+?build
+build
+library(devtools)
+build()
+setwd("~/Documents/hackout/mapData/")
+args(build)
+build()
+install_github("hackout2/mapData")
+library(mapData)
+vignette("mapData_vignette")
+q()
