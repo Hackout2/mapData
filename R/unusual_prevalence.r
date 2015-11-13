@@ -10,12 +10,34 @@
 #'
 #' @param data a line list-type dataframe containing a line for each case, with its region and the regional population.
 #' @param pops dataframe containing the region ID in the first and the population size for each region in the dataset in the second column.
-#' @param region.head variable name of the incidence column in data.
+#' @param region.head variable name of the column specifying the region in data.
 #' @param region.i ID of the region being tested.
 #'
 #' @export
 #'
-unusual_prevalence_region <- function(data, pops, region.head, region.i) {
+#' @examples
+#' my.data <- data.frame(county.id = ceiling(3*runif(10)),
+#'                      age = rlnorm(10),
+#'						sex = factor(floor(2*runif(10)), levels=c(0,1), labels=c("male", "female"))
+#'                      )
+#'
+#' my.populations <- data.frame(county.id = 1:3,
+#'				population = c(10, 50, 100)
+#'				)
+#'
+#' # Is prevalence in county 2 particularly high or low (given populations)?
+#' unusual_prevalence_region(my.data, 'county.id', '2', my.populations)
+#'
+#' # Same thing, with no population data
+#' unusual_prevalence_region(my.data, 'county.id', '2')
+#'
+#' @return
+#' If a population dataset is supplied, a Fisher p-value under the null 
+#' hypothesis that the prevalence in the region being tested is the same 
+#' as in all other areas. If no population data is supplied, the null 
+#' hypothesis is a Poisson distribution for the number of cases per region.
+
+unusual_prevalence_region <- function(data, region.head, region.i, pops=NULL) {
     data$curr.col <- (data[, region.head] == region.i)
     if (is.null(pops)) {
         tt <- table(data[, region.head] == region.i)
@@ -55,6 +77,30 @@ unusual_prevalence_region <- function(data, pops, region.head, region.i) {
 #'
 #' @export
 #'
+#' @examples
+#' my.data <- data.frame(county.id = ceiling(3*runif(10)),
+#'                      age = rlnorm(10),
+#'						sex = factor(floor(2*runif(10)), levels=c(0,1), labels=c("male", "female"))
+#'                      )
+#'
+#' my.populations <- data.frame(county.id = 1:3,
+#'				population = c(10, 50, 100)
+#'				)
+#'
+#' # Is prevalence in county 2 particularly high or low (given populations)?
+#' calculate_prevalence_unusual_pval(my.data, pops = my.populations, region.head = 'county.id')
+#'
+#' # Same thing, with no population data
+#' calculate_prevalence_unusual_pval(my.data, region.head = 'county.id')
+#'
+#' @return
+#' If a population dataset is supplied, a data frame containing Fisher p-values
+#' under the null hypothesis that the prevalence in the region being tested is 
+#' the same as in all other areas. If no population data is supplied, the null 
+#' hypothesis is a Poisson distribution for the number of cases per region. The 
+#' data frame also contains a column indicating whether the observed prevalence 
+#' was higher (+1) or lower (-1) than expected.
+
 calculate_prevalence_unusual_pval <- function(data, pops = NULL, conf.level = 0.95,
     region.head = "region", scale = 1) {
     prev <- calculate_prevalence(data = data, pops = pops, conf.level = conf.level,
@@ -63,6 +109,10 @@ calculate_prevalence_unusual_pval <- function(data, pops = NULL, conf.level = 0.
         pops = pops, region.head = region.head, region.i = prev$region[i]))
     p.bonferroni <- 1 - (1 - p.values)^nrow(prev)
     prev$p.val.bonferroni <- p.bonferroni
-    prev$sign <- sign(prev$prevalence - sum(prev$cases)/sum(prev$population))
+    
+    if(!is.null(pops))
+        prev$sign <- sign(prev$prevalence - sum(prev$cases)/sum(prev$population))
+    else
+    	prev$sign <- sign(prev$cases - mean(prev$cases) + prev$cases/nrow(prev)) # is no. cases greater or smaller than leave-one-out mean?
     return(prev)
 }
