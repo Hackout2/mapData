@@ -1,4 +1,4 @@
-## ----message=FALSE-------------------------------------------------------
+## ---- message=FALSE------------------------------------------------------
 library(mapData)
 library(epimap)
 data(snow_linelist)

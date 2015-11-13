@@ -9,11 +9,9 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-# Using the mapData package
-
 This demonstration uses data on cholera deaths collected in Soho by John Snow during the 1854 outbreak. First, load the package and the line list data and shapefiles. (Note that although the locations of deaths are Snow's, the sex and age of cases and the area populations have been simulated.)
 
-```{r message=FALSE}
+```{r, message=FALSE}
 library(mapData)
 library(epimap)
 data(snow_linelist)
@@ -85,7 +83,9 @@ choroMap(pump_areas, col.by="prev", directView="disabled", alpha=0.5)
 # which brings up the figure in a browser window.
 ```
 
+<div style="width:300px; height=200px">
 ![Choropleth](map.png)
+</div>
 
 ## Unusually high or low prevalence
 From the map, the area surrounding the Broad Street pump seems to have a higher prevalence than areas near other pumps. But was it "unusually" high, or just the result of random local variation?
@@ -101,5 +101,3 @@ The small p-value strongly suggests something different about this area. We can 
 ```
 
 Here we see that there are only two regions which are _not_ found to have unusually high or low prevalence, as judged by their large p-vales: Briddle Street and South Soho. Based on p-values, Broad Street and Crown Chapel might be classified as having high prevalence (+1 appears in the "sign" column of the output) while Coventry Street, Dean Street, Great Malborough Street and Warwick would all be classed as having unusually low prevalence compared to the area as a whole (-1 in the "sign" column).
-
-## estimate_density
